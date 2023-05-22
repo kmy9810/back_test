@@ -139,6 +139,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+mysettings.py
+
 
 # Spyder project settings
 .spyderproject
@@ -469,3 +471,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/django,python,pycharm,macos,windows,visualstudiocode,venv,dotenv
+
