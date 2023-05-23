@@ -49,3 +49,16 @@ class CommentSerializer(serializers.ModelSerializer):
         fields = '__all__'
         extra_kwargs = {"user": {"required": False},
                         "review": {"required": False}}
+
+
+class SearchSerializer(serializers.ModelSerializer):
+    sub_recipe_set = serializers.SerializerMethodField()  # 조리법 데이터 추가
+
+    def get_sub_recipe_set(self, obj):
+        sub_recipe = SubRecipe.objects.filter(recipe_id=obj.id)
+        sub_recipe_list = SubRecipeSerializer(sub_recipe, many=True)
+        return sub_recipe_list.data
+
+    class Meta:
+        model = Recipe
+        exclude = ['tip', 'car', 'na', 'fat', 'pro', 'kcal']

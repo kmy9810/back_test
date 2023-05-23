@@ -1,10 +1,12 @@
-from django.db.models import Q
+from _ast import Slice
+from django.db.models import Q, ExpressionWrapper, CharField
+from django.db.models.functions import Substr
 from rest_framework.generics import get_object_or_404
 from rest_framework import status, permissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Recipe, SubRecipe, Review, Comment
-from .serializers import RecipeSerializer, ReviewSerializer, CommentSerializer
+from .serializers import RecipeSerializer, ReviewSerializer, CommentSerializer, SearchSerializer
 
 
 # 레시피 전체 조회 및 등록
@@ -15,6 +17,7 @@ class RecipeView(APIView):
         serializer = RecipeSerializer(recipe, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+    # 크롤링 데이터라 post 의도가 명확하지 않음! -> 수정예정
     def post(self, request):
         serializer = RecipeSerializer(data=request.data)
         if serializer.is_valid():
@@ -54,9 +57,9 @@ class ReviewView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request, recipe_id):
-        serializer = RecipeSerializer(data=request.data)
+        serializer = ReviewSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save(recipe=recipe_id)
+            serializer.save(recipe_id=recipe_id)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -87,7 +90,7 @@ class ReviewDetailView(APIView):
 class CommentView(APIView):
     # pk = review_id
     def get(self, request, pk):
-        comment = Review.objects.filter(review_id=pk)
+        comment = Comment.objects.filter(review_id=pk)
         serializer = CommentSerializer(comment, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -96,7 +99,7 @@ class CommentView(APIView):
         serializer = CommentSerializer(data=request.data)
         if serializer.is_valid():
             # 유저도 같이 저장 추가 예정
-            serializer.save(review=pk)
+            serializer.save(review_id=pk)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -104,7 +107,7 @@ class CommentView(APIView):
     # pk = comment_id
     def patch(self, request, pk):
         comment = get_object_or_404(Comment, id=pk)
-        serializer = ReviewSerializer(comment, data=request.data, partial=True)
+        serializer = CommentSerializer(comment, data=request.data, partial=True)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
@@ -119,12 +122,15 @@ class CommentView(APIView):
 
 
 class SearchView(APIView):
-    # 테스트용 get -> 삭제 예정!
-    def get(self, request):
-        return Response('검색어를 입력해주세요.', status=status.HTTP_200_OK)
-
     def post(self, request):
         search_word = request.data['search']
-        search_list = Recipe.objects.filter(Q(name__icontains=search_word)|Q(ingredients__icontains=search_word))
-        serializer = RecipeSerializer(search_list, many=True)
+        ingredients = search_word.split(',')[:3]  # 최대 3개의 재료 추출
+
+        # 재료를 모두 포함 하는 레시피 필터링
+        recipes = Recipe.objects.all()
+        filter_recipes = recipes
+        for ingredient in ingredients:
+            filter_recipes = recipes.filter(Q(ingredients__icontains=ingredient) | Q(name__icontains=ingredient))
+
+        serializer = SearchSerializer(filter_recipes, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)

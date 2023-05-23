@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Recipe(models.Model):
@@ -17,6 +18,12 @@ class Recipe(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self, category):
+        if category == 'recipe_detail':
+            return reverse('recipe_detail_view', kwargs={'recipe_id': self.id})
+        elif category == 'review':
+            return reverse('review_view', kwargs={'recipe_id': self.id})
+
 
 class SubRecipe(models.Model):
     recipe = models.ForeignKey('Recipe', on_delete=models.CASCADE)
@@ -27,10 +34,14 @@ class SubRecipe(models.Model):
 class Review(models.Model):
     # user pk 추가
     recipe = models.ForeignKey('Recipe', on_delete=models.CASCADE)
+    title = models.CharField(max_length=100)
     content = models.TextField()
     # img = models.ImageField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def get_absolute_url(self):
+        return reverse('review_detail_view', kwargs={'review_id': self.id})
 
 
 class Comment(models.Model):
