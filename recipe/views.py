@@ -1,6 +1,5 @@
-from _ast import Slice
-from django.db.models import Q, ExpressionWrapper, CharField
-from django.db.models.functions import Substr
+from .slack_notify import slack_notify
+from django.db.models import Q
 from rest_framework.generics import get_object_or_404
 from rest_framework import status, permissions
 from rest_framework.views import APIView
@@ -60,6 +59,11 @@ class ReviewView(APIView):
         serializer = ReviewSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save(recipe_id=recipe_id)
+            slack_message = f"[새로운 후기 알람] \n" \
+                            f"레시피 : {serializer.data['recipe']} \n" \
+                            f"후기 제목 : {serializer.data['title']} \n" \
+                            f"내용 : {serializer.data['content']} \n"
+            slack_notify(slack_message, "#프로젝트", username='후기 알람봇')
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
