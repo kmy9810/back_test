@@ -1,0 +1,2118 @@
+[
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 1,
+      "turn": [
+        "1. 손질된 새우를 끓는 물에 데쳐 건진다.a",
+        "2. 연두부, 달걀, 생크림, 설탕에 녹인 무염버터를 믹서에 넣고 간 뒤 새우(1)를 함께 섞어 그릇에 담는다.b",
+        "3. 시금치를 잘게 다져 혼합물 그릇(2)에 뿌리고 찜기에 넣고 중간 불에서 10분 정도 찐다.c"
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00028_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00028_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00028_3.png"
+      ],
+      "recipe": 1
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 2,
+      "turn": [
+        "1. 부추는 깨끗이 씻어 물기를 제거하고, 5cm 길이로 썰고 부추에 날콩가루를 넣고 고루 섞이도록 버무린다.",
+        "2. 찜기에 면보를 깔고 부추를 넣은 후 김이 오르게 쪄서 파랗게 익힌다.",
+        "3. 저염간장에 다진 대파, 다진 마늘, 고춧가루, 요리당 , 참기름, 참깨를 섞어 양념장을 만들고 찐 부추는 그릇에 담아낸다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230206/20230206054820_1675673300714.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230206/20230206054834_1675673314720.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230206/20230206054908_1675673348152.jpg"
+      ],
+      "recipe": 2
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 3,
+      "turn": [
+        "1. 물기를 빼고 2cm 정도의 크기로 썰은 부추와 양파를 양념장에 섞어 양념속을 만든다.",
+        "2. 깨끗이 씻은 방울토마토는 꼭지를 떼고 윗부분에 칼로 십자모양으로 칼집을 낸다.",
+        "3. 칼집을 낸 방울토마토에 양념속을 사이사이에 넣어 버무린다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00031_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00031_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00031_5.png"
+      ],
+      "recipe": 3
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 4,
+      "turn": [
+        "1. 사과, 순두부를 믹서에 넣고 곱게 갈아 소스를 만든다.",
+        "2. 오이는 소금으로 문질러 씻어 반을 갈라 씨를 제거하고 어슷썰기를 한다.",
+        "3. 썰어 놓은 오이에 순두부사과 소스를 넣고 버무린 후 다진 땅콩을 뿌려 마무리 한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00032_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00032_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00032_3.png"
+      ],
+      "recipe": 4
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 5,
+      "turn": [
+        "2. 북어채를 잘게 손으로 찢어 찬물에 헹구어 준비한 후 양파, 표고버섯, 사과는 채 썰고 새우는 등쪽의 두세 마디에 꼬챙이를 넣어 내장을 뺀 후 헹군다.",
+        "3. 찬물에 북어채, 새우, 표고버섯, 양파를 넣고 20분 정도 끓인 후 사과를 넣어 북어의 씁쓸한 맛을 없앤다.",
+        "5. 그릇에 담아낸다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00033_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00033_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00033_5.png"
+      ],
+      "recipe": 5
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 6,
+      "turn": [
+        "3. 황태는 손질하여 물에 헹궈 건져 놓고 콩나물은 다듬어 씻고 청양고추는 어슷썰기 한다.",
+        "4. 냄비에 물을 붓고 황태와 무를 넣고 끓인 후 육수에서 물을 건져내고 저염 된장을 푼다.",
+        "5. 콩나물, 다진 마늘, 청양고추를 넣고 뚜껑을 덮어 김이 나게 끓\n여준다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00036_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00036_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00036_5.png"
+      ],
+      "recipe": 6
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 7,
+      "turn": [
+        "1. 감자, 양파는 얇게 썰고 애느타리 버섯은 썰어 달궈진 팬에 굽는다.",
+        "2. 냄비에 물을 붓고 된장을 푼 뒤 감자, 양파, 두부를 넣어 재료가 투명해지게 끓인 후 된장국의 재료를 건져서 믹서에 넣어 갈고 된장국에 넣어 한번 더 끓인다.",
+        "3. 구운 애느타리버섯과 대파를 국에 넣어 끓인 후 그릇에 담는다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00037_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00037_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00037_6.png"
+      ],
+      "recipe": 7
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 8,
+      "turn": [
+        "1. 찬물에 표고버섯,머리와 내장을 제거한 멸치,\n다시마, 양파를 넣어 중간 불에서 10분 정도\n끓여 멸치육수를 만든다.",
+        "2. 육수의 표고버섯 기둥, 멸치, 다시마, 양파를 건진 후 표고버섯은 편으로 썰고 청경채는 4cm 크기로 썬다.",
+        "3. 끓는 육수에 준비한 표고버섯과 청경채를 넣고 국간장으로 간을 한 후 마늘을 넣어 한소끔 끓인다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00038_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00038_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00038_4.png"
+      ],
+      "recipe": 8
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 9,
+      "turn": [
+        "1. 올리브유, 식초, 설탕, 다진 마늘을 섞어 거품기로 충분히 저어주어 올리브마늘 드레싱을 만든다.",
+        "2. 치커리는 싱싱하게 찬물에 담갔다가 물기를 뺀 후 한입 크기로 자르고, 적양배추, 양파, 당근은 곱게채를 썬다.",
+        "3. 접시에 준비한 치커리, 적양배추, 양파, 당근을 담고 올리브마늘 드레싱을 뿌린다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00095_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00095_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00095_4.png"
+      ],
+      "recipe": 9
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 10,
+      "turn": [
+        "1. 찬물이 담긴 냄비에 식초, 소금을 넣고 메추리알을 삶는다. 물이 끓어오르면 5분 정도 더 삶아 찬물에 헹군 후 껍질을 벗기고 반으로 자른다.",
+        "2. 딸기를 흐르는 물에 가볍게 씻어 꼭지를 제거한 후 물기를 빼고 반으로 자른다.",
+        "3. 양상추는 찬물에 담갔다가 물기를 빼고 한입 크기로 찢은 후 접시에 양상추, 딸기, 블루베리, 메추리알을 담고 플레인요거트를 끼얹는다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00087_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00087_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00087_4.png"
+      ],
+      "recipe": 10
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 11,
+      "turn": [
+        "1. 시금치는 끓는 소금물에 데쳐 찬물에 헹구어 물기를 짜고 우유를 넣고 블렌더에 곱게 갈아 체에 거른다.",
+        "2. 껍질 벗긴 감자는 찜기에 넣어 20분 정도 삶고 꺼내서 으깨고, 아몬드는 잘게 다지며, 치커리는 곱게 다진다.",
+        "3. 으깬 감자, 다진 치커리, 시금치 우유소스, 설탕을 넣고 섞어 접시에 담고 아몬드, 크랜베리를 올리고 시금치우유 소스를 곁들인다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00089_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00089_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00089_5.png"
+      ],
+      "recipe": 11
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 12,
+      "turn": [
+        "1. 곱게 다진 양파와 오이피클은 물기를 짠다.",
+        "2. 연두부에 다진 양파, 다진 오이피클, 올리브유, 머스터드, 후추, 꿀, 식초, 레몬즙을 넣어 두부타르타르 소스를 만든다.",
+        "3. 새송이버섯은 0.5cm 두께로 썰고 프라이팬에 노릇하게 구워준 후 접시에 새송이버섯과 치커리를 담고 소스를 곁들인다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00091_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00091_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00091_5.png"
+      ],
+      "recipe": 12
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 13,
+      "turn": [
+        "1. 저염간장, 식초, 레몬즙, 설탕을 혼합하여 간장레몬 소스를 만든다.",
+        "2. 호박, 가지, 새송이버섯은 3cm 길이로 자른 후 얇은 편으로 채 썰고, 양파, 파프리카, 피망은 호박 길이로 썬다.",
+        "3. 가지, 호박, 새송이버섯, 양파, 파프리카, 피망에 올리브유를 바르고 달궈진 그릴 팬에 구운 후 접시에 담고 발사믹 크레타를 뿌리고 간장레몬 소스를 곁들인다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00093_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00093_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00093_3.png"
+      ],
+      "recipe": 13
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 14,
+      "turn": [
+        "1. 두유에 플레인요거트와 레몬즙, 설탕을 넣고 잘 섞어 두유요거트 소스를 만든다.",
+        "2. 강낭콩은 물에 불린 후 콩과 물을 1:2.5로 넣고 20~25분 삶아 건지고 브로콜리와 컬리플라워는 한입 크기로 썰어 끓는 소금물에 살짝 데쳐 찬물에 헹궈 물기를 뺀다.",
+        "3. 접시에 데친 브로콜리와 컬리플라워, 삶은 강낭콩, 채썬 적양파, 다진 호두, 건포도를 담고 두유요거트 소스를 곁들여 낸다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00094_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00094_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00094_5.png"
+      ],
+      "recipe": 14
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 15,
+      "turn": [
+        "1. 오렌지는 깨끗이 씻어 껍질을 벗긴다.",
+        "2. 당근은 깨끗이 씻어 작은 토막으로 썬다.",
+        "3. 당근, 오렌지, 물(50ml)을 믹서에 곱게 간다.",
+        "4. 믹서에 갈아낸 주스는 고운 체로 거른다.",
+        "5. 주스를 살얼음이 생길 만큼 시원하게 냉동한다.",
+        "6. 컵에 담아 마무리한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00108_1.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00108_2.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00108_3.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00108_4.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00108_5.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00108_6.jpg"
+      ],
+      "recipe": 15
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 16,
+      "turn": [
+        "1. 잣, 아몬드, 해바라기씨, 호두, 호박씨는 다진다.",
+        "2. 끓는 물에 저염소금과 식초를 넣은 후 소면을 삶은 후 체에 건져 물기를\n뺀다.",
+        "3. 석류는 물 600g와 함께 믹서에 갈고 체에 걸러 즙을 낸다. 그릇에 면을 담고 차갑게 식힌 석류즙을 붓고 견과류, 채 썬 오이를 고명으로 올린다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00111_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00111_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00111_3.png"
+      ],
+      "recipe": 16
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 17,
+      "turn": [
+        "1. 검은콩을 1시간 찬물에 담가 불린 후 삶아 익힌 후 불순물을 제거하고 흑임자, 생수, 삶은 콩, 호두를 믹서에 갈아 살엄음이 생기도록 냉동실에 넣는다.",
+        "2. 오이는 돌려 깎아 채 썰고, 토마토는 1/8크기로 썰고, 달걀은 삶아 반으로 자른다.",
+        "3. 실곤약은 끓는 물에 데치고 찬물에 헹궈 그릇에 담은 후 콩물을 담고 오이, 토마토, 달걀을 고명으로 올려 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00113_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00113_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00113_6.png"
+      ],
+      "recipe": 17
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 18,
+      "turn": [
+        "1. 브로콜리, 숙주, 표고버섯, 닭 가슴살은 다지고 다진 닭 가슴살은 소금과 후추로 밑간 한다.",
+        "2. 다진 채소와 닭가슴살, 참기름, 저염간장을 섞어 만두소를 만든다.",
+        "3. 준비한 만두피에 만두소를 넣은 후 만두 모양으로 빚고 만두를 찜통에 넣어 찌고 그릇에 담는다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00114_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00114_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00114_4.png"
+      ],
+      "recipe": 18
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 19,
+      "turn": [
+        "1. 함초, 노루궁뎅이버섯, 다시마, 파, 양파, 무를 물에 넣어 10분 끓이고 향이 강한 모시조개와 냉이를 넣고 30분  끓인 후 간장으로 색을 낸다.",
+        "2. 소면은 따로 삶는다.",
+        "3. 그릇에 삶은 소면을 담은 후 육수를 붓고 지단, 슬라이스한 청고추, 실고추를 올려 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00131_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00131_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00131_5.png"
+      ],
+      "recipe": 19
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 20,
+      "turn": [
+        "1. 두부에 쌀뜨물을 넣고 갈아준다.",
+        "2. 돼지고기는 썰고 김치는 물에 씻어 양념을 제거하고 3×3cm로 썬다.",
+        "3. 냄비에 돼지고기와 김치를 함께 볶은 후, 망에 거른 된장과 1의 두부, 고춧가루, 청양고추, 홍고추를 넣어 끓이다가 대파를 넣어 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00137_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00137_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00137_3.png"
+      ],
+      "recipe": 20
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 21,
+      "turn": [
+        "1. 김치, 베이컨, 스팸, 소시지, 양파, 두부, 무는 두께 0.5cm로 썬다.",
+        "2. 다시마와 물을 끓여 다시마물을 만든다.",
+        "3. 냄비에 소시지, 베이컨, 두부, 스팸, 무, 우민찌, 김치, 다시마물 300g을 넣어 끓인 후 저염된장, 양파, 대파, 다진 마늘, 떡국 떡을 넣고 재료가 다 익으면 홍고추와 청양고추를 넣어 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00138_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00138_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00138_3.png"
+      ],
+      "recipe": 21
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 22,
+      "turn": [
+        "1. 감자는 믹서에 갈고 양배추는 채 썰고 고기, 당근, 청양고추, 두부는 다진다.",
+        "2. 준비해둔 재료를 모두 섞고 부침가루와 계란을 넣어 반죽한다.",
+        "3. 가열된 팬에 기름을 두르고 반죽을 부어 굽고 소스를 함께 곁들인다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00181_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00181_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00181_6.png"
+      ],
+      "recipe": 22
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 23,
+      "turn": [
+        "1. 청양고추와 홍고추를 다져서 참기름에 살짝 볶은 후 볶은 고추에 마요네즈와 레몬즙을 넣어 소스를 만든다.",
+        "2. 돌나물은 손질하여 찬물에 담구고 새송이버섯은 달군 프라이팬에 참기름을 두르고 노릇\n하게 굽는다.",
+        "3. 돌나물은 물기를 빼고 구운 새송이버섯과 레몬마요네즈 소스를 넣고\n버무려 접시에 담는다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00074_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00074_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00074_5.png"
+      ],
+      "recipe": 23
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 24,
+      "turn": [
+        "1. 배추를 소금물에 하루 동안 절인 후 물기를 빼고 석류는 즙을 낸다.",
+        "2. 무는 채 썰고, 쪽파와 미나리는 4cm로 자른다.",
+        "3. 무채, 미나리, 쪽파, 다진 마늘, 다진 생강, 새우젓국을 넣고 섞어 소를 만들고 절인 배추에 소를 넣고 오므려 싼다. 석류즙에 소를 채운 배추를 담가 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00159_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00159_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00159_4.png"
+      ],
+      "recipe": 24
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 25,
+      "turn": [
+        "1. 발사믹 식초, 화이트와인, 다진 유자청 건더기를 넣고 졸여 소스를 만들고 대구를 손질하여 포를 뜬다.",
+        "2. 대파, 청파프리카, 홍파프리카, 황파프리카를 채 썬다.",
+        "3. 대구포에 밀가루를 묻혀 청파프리카, 홍파프리카, 황파프리카, 황금팽이버섯을 넣고 말아 미나리로 묶어 찐 후 소스를 뿌리고 썬 대파를 올려 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00161_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00161_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00161_4.png"
+      ],
+      "recipe": 25
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 26,
+      "turn": [
+        "1. 황파프리카를 갈아 체에 내리고 멥쌀로 쌀풀을 만들어 황파프리카 즙을 섞고 물엿을 첨가하여 양념을 만든다.",
+        "2. 배추를 소금물에 절이고 절인 배추를 찬물로 씻어 소금기를 뺀다.",
+        "3. 소금기를 뺀 배추에 채썬 자색고구마, 무, 쪽파, 부추, 사과, 배를 놓고 양념을 부은 후 3일 동안 숙성시켜 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00162_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00162_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00162_5.png"
+      ],
+      "recipe": 26
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 27,
+      "turn": [
+        "1. 양파와 마늘은 다져서 볶다가 토마토 과육과 설탕, 바질을 넣고 고추장을 섞어 토마토 소스를 만든다.",
+        "2. 가지, 양송이버섯, 애호박, 사과는 썰고 살라미는 데친다.",
+        "3. 오븐용 팬에 토마토 소스를 넓게 펴준 뒤 애호박, 가지, 양송이버섯, 살라미를 겹치게 넣고 180℃로 예열한 오븐에 넣고 30분 구워 완성한다"
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00193_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00193_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00193_3.png"
+      ],
+      "recipe": 27
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 28,
+      "turn": [
+        "1. 간장, 레몬즙, 설탕, 다진 홍고추를 섞어 드레싱을 만든다.",
+        "2. 민들레 잎은 4×4cm로 썰고, 비트는 채 썰고 물에 담가 색을 뺀다.",
+        "3. 오렌지는 씻어 껍질만 발라 채 썰고 민들레 잎, 비트, 오렌지 껍질을 섞어 접시에 담고 드레싱을 곁들인다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00201_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00201_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00201_4.png"
+      ],
+      "recipe": 28
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 29,
+      "turn": [
+        "1. 올리브오일, 발사믹식초, 후춧가루를 섞어 차게 식혀 드레싱을 만든다.",
+        "2. 가지와 토마토는 5mm두께로 썰고 120도 오븐에 20분 구운 후 구운 가지는 물기를 제거한다.",
+        "3. 팬에 올리브오일을 두르고 약불에서 채 썬 마늘을 볶다가, 가지를 넣고 구운 후 접시에 토마토, 가지를 번갈아 담고 무순으로 장식하고 드레싱을 곁들인다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00202_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00202_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00202_5.png"
+      ],
+      "recipe": 29
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 30,
+      "turn": [
+        "1. 끓는 물에 배춧잎을 데친다.",
+        "2. 당근, 호박, 표고버섯, 양파는\n입자있게 다진다.",
+        "3. 돼지고기를 썰어 불린 쌀, 다진 야채와\n함께 밥을 짓는다.",
+        "4. 데친 배춧잎에 지어놓은 밥을 올려\n돌돌만다.",
+        "5. 말아 놓은 배춧잎을 부추로 묶는다.",
+        "6. 찜통에 김이 오르면 ?번을 넣고 약 5분\n정도 찐다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00636_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00636_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00636_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00636_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00636_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00636_6.png"
+      ],
+      "recipe": 30
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 31,
+      "turn": [
+        "1. 대추는 돌려 깍아 씨를 제거 하고 곱게\n다진다.",
+        "2. 다진 소고기와 돼지고기에 대추와 소금\n후춧가루를 넣고 치댄다.",
+        "3. 애호박과 단호박, 파프리카는\n입자있게 썰어 ?에 넣고 잘 치댄다.",
+        "4. 양송이는 편으로 썰어 팬에 익히고,\n인삼을 뇌두를 자르고 깨끗이 씻어\n팬에 볶아 잘게 썰어 ?에 넣는다.",
+        "5. 재료가 골고루 섞인 떡갈비를 갈비\n모양으로 만든다.",
+        "6. 떡갈비를 팬에 굽고, 접시에 배춧잎을\n깔고 익힌 양송이를 올리고 떡갈비를\n담는다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00637_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00637_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00637_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00637_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00637_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00637_6.png"
+      ],
+      "recipe": 31
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 32,
+      "turn": [
+        "1. 닭을 깨끗이 손질하고, 부위별로\n자른다.",
+        "2. 냄비에 가시오가피, 대파, 다시마,\n마늘, 건새우를 넣고 은근히 끓인 후\n닭을 넣고 약 20분 정도 삶아 건진 뒤\n살을 찢어둔다.",
+        "3. 양파, 오이는 채썰고 식초, 설탕,\n소금을 넣고 초절임한다",
+        "4. 겨자가루에 30℃ 정도의 물을 넣고\n골고루 섞어 발효시키고, 설탕, 식초,\n소금을 넣고 겨자소스를 만든다",
+        "5. 흰곤약과 비트, 치자가루를 섞은 곤약,\n채썬 다시마를 접시에 담는다.",
+        "6. 양파, 오이 초절임과 닭살을 한쪽에\n담아 먹기 직전에 겨자소스를 올린다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00638_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00638_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00638_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00638_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00638_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00638_6.png"
+      ],
+      "recipe": 32
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 33,
+      "turn": [
+        "1. 찹쌀은 깨끗이 씻어 30분 정도 불린다",
+        "2. 불린 찹쌀은 냄비에 넣고 질게 밥을\n한다.",
+        "3. 닭가슴살은 넓게 펴서 소금,\n후춧가루를 뿌린다.",
+        "4. 호박잎과 미나리는 끓는 물에 살짝\n데치고, 대추는 돌려 깎아 씨를\n제거하고 인삼은 뇌두를 제거한 뒤\n채를 썰어둔다.",
+        "5. 데친 호박잎에 닭 가슴살을 올린다.",
+        "6. 닭 가슴살위에 찹쌀밥과 준비한 야채와\n대추를 올려 돌돌 말아 질게 된\n찹쌀밥에 넣고 약 20분 정도 더 쪄낸다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00639_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00639_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00639_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00639_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00639_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00639_6.png"
+      ],
+      "recipe": 33
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 34,
+      "turn": [
+        "1. 된장에 두부를 넣고 골고루 섞는다.",
+        "2. 표고버섯과 마늘은 함께 갈아둔다.",
+        "3. 미역은 충분히 불린다.",
+        "4. 냄비에 황태채와 갈아둔 표고버섯,\n마늘을 넣고 은근히 끓여 육수를\n만든다.",
+        "5. 곤약은 납작납작하게 썰어 끓는 물에\n데친다.",
+        "6. 육수에서 황태를 건져 두부된장과 함께\n갈아 육수에 붓고, 미역, 곤약,\n들깨가루를 넣고 약 20분 정도 끓인 후\n액젓으로 간을 한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00640_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00640_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00640_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00640_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00640_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00640_6.png"
+      ],
+      "recipe": 34
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 35,
+      "turn": [
+        "1. 훈제오리 가슴살을 슬라이스한다.",
+        "2. 슬라이스한 훈제오리는 팬에 굽는다.",
+        "3. 양파는 채썰고 찬물에 담근 뒤 건진다.",
+        "4. 레디쉬는 채썰고 찬물에 담근 뒤\n건진다.",
+        "5. 먹기 직전에 발사믹소스를 만든다.",
+        "6. 접시에 훈제오리와 양파채, 레디쉬,\n블루베리를 담고 발사믹소스를\n올린다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00641_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00641_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00641_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00641_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00641_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00641_6.png"
+      ],
+      "recipe": 35
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 36,
+      "turn": [
+        "1. 훈제오리 가슴살은 올리브오일,\n로즈마리, 후춧가루로\n마리네이드한다.",
+        "2. 새송이버섯은 편으로 썰고 팬에\n굽는다.",
+        "3. 오렌지는 슬라이스로 썬다.",
+        "4. 땅콩과 파슬리는 입자있게 다진다.",
+        "5. 마리네이드한 오리 고기를 구워 접시에\n담는다.",
+        "6. 유자청에 땅콩, 파슬리가루를 넣고\n소스를 만들고, 구워진 오리고기\n사이에 오렌지 슬라이스를 넣고\n유자청소스를 올린다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00642_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00642_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00642_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00642_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00642_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00642_6.png"
+      ],
+      "recipe": 36
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 37,
+      "turn": [
+        "1. 전복은 수저로 떼어내어 소금으로 비벼\n깨끗이 씻는다.",
+        "2. 시금치는 데쳐 다지고, 새우는 껍질을\n벗겨 전복, 해초와 함께 다진다.",
+        "3. ?번을 잘 섞어 전복 껍질에 넣는다.",
+        "4. 찜통에 김이 오르면 속을 채운 전복\n껍질을 넣고 약 10분 정도 찐다.",
+        "5. 저염간장, 레몬, 설탕, 다진마늘을\n넣고 살짝 끓여 소스를 만든다.",
+        "6. 간장소스에 전분을 풀어 농도를\n맞추고, 전복찜에 여러번 바르고\n식용꽃을 올린다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00643_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00643_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00643_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00643_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00643_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00643_6.png"
+      ],
+      "recipe": 37
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 38,
+      "turn": [
+        "1. 검은콩은 깨끗이 씻어 약 12시간 정도\n충분히 불린다.",
+        "2. 불린 검은콩은 20분 정도 삶아 깨끗이\n씻는다.",
+        "3. 삶은 검은콩은 믹서기에 곱게 갈아\n차갑게 식힌다.",
+        "4. 오이는 씨를 제거하고 깨끗이 씻어\n채썬다.",
+        "5. 물을 끓여 메밀면을 삶고, 찬물에\n여러번 헹구어 건져 물기를 뺀다.",
+        "6. 메밀면을 그릇에 담고 차가운 콩 국물,\n땅콩, 잣, 오이, 방울토마토 및 통깨를\n올린다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00644_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00644_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00644_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00644_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00644_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00644_6.png"
+      ],
+      "recipe": 38
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 39,
+      "turn": [
+        "1. 어린잎은 찬물에 담근다.",
+        "2. 마는 껍질을 벗겨 동글동글하게 썬다",
+        "3. 썰어 놓은 마는 팬에 기름을 살짝\n두르고 앞뒤로 굽는다.",
+        "4. 참나물, 돈나물, 토마토, 레디쉬는\n먹기 좋은 크기로 썬다.",
+        "5. 겨자가루는 30℃ 물을 섞어 발효\n시킨다.",
+        "6. 저염간장에 식초, 설탕, 발효겨자를\n넣고 골고루 섞어 소스를 만들고,\n접시에 구운 마와 손질한 야채를 넣고\n만들어 놓은 소스와 어린잎을 올린다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00645_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00645_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00645_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00645_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00645_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00645_6.png"
+      ],
+      "recipe": 39
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 40,
+      "turn": [
+        "1. 육수 재료를 넣고 중간 불로 끓인 뒤\n체에 걸러 육수를 만든다.",
+        "2. 닭가슴살은 채 썬 뒤 물에 넣고\n삶는다.",
+        "3. 애호박은 반달 썰고, 미나리는 5㎝\n길이로 썰고, 청양고추는 잘게 썬 뒤\n찬물에 담가 씨를 빼고, 두부는 한입\n크기로 썰어 물에 담가둔다.",
+        "4. 김치를 한입 크기로 썬 뒤 참기름에\n볶다가 육수를 붓는다.",
+        "5. 두부, 애호박, 느타리버섯, 미나리,\n닭가슴살을 넣어 끓어오르면\n달걀물과 청양고추를 넣고 조금\n더 끓여 마무리한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00271_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00271_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00271_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00271_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00271_5.png"
+      ],
+      "recipe": 40
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 41,
+      "turn": [
+        "1. 대파, 마늘, 쇠고기를 물(300g)과\n함께 끓인 뒤 면포에 걸러 육수를\n만든다.",
+        "2. 콩나물, 김치를 물에 씻어 손질한다.",
+        "3. 두부는 물기를 빼고, 붉은 고추는\n다진 뒤 돼지고기와 섞어 반죽해\n동그랗게 빚어 완자를 만든다.",
+        "4. 김 오른 찜기에 완자를 넣어 찐다.",
+        "5. 육수를 끓이고 끓어오르면 김치,\n콩나물, 새우젓을 넣는다.",
+        "6. 한소끔 더 끓이다가 완자를 넣고\n조금 더 끓여 마무리한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00272_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00272_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00272_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00272_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00272_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00272_6.png"
+      ],
+      "recipe": 41
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 42,
+      "turn": [
+        "1. 풋고추는 잘게 다진다.",
+        "2. 백김치는 먹기 좋은 크기로 썬다.",
+        "3. 냄비에 백김치를 볶다가 김치가\n익으면 참기름, 후춧가루,\n다진 마늘을 넣고 볶는다.",
+        "4. 물(200g)을 넣고 끓인다.",
+        "5. 물이 끓으면 콩비지와 간장,\n풋고추를 넣어 약한 불에서 15분\n정도 끓여 마무리한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00273_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00273_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00273_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00273_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00273_5.png"
+      ],
+      "recipe": 42
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 43,
+      "turn": [
+        "1. 육수 재료를 넣고 끓인 뒤 체로 걸러\n육수를 낸다.",
+        "2. 오징어 몸통은 큼지막하게 썰고\n다리는 얇게 썬다.",
+        "3. 두부와 버섯은 먹기 좋게 썰고,\n고추는 어슷하게 썰고, 고구마는\n먹기 좋은 크기로 썰고, 콩나물은\n다듬는다.",
+        "4. 김치는 먹기 좋은 크기로 썬 뒤\n냄비에 참기름을 두르고 볶다가\n고구마, 콩나물, 육수를 넣고 끓인다.",
+        "5. 자작하게 끓으면 오징어를 넣고\n끓이고, 오징어가 익으면 들깻가루를\n넣고 끓인다.",
+        "6. 두부, 팽이버섯, 쑥갓, 고구마,\n붉은 고추를 넣고 끓여 마무리한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00274_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00274_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00274_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00274_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00274_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00274_6.png"
+      ],
+      "recipe": 43
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 44,
+      "turn": [
+        "1. 냄비에 육수 재료를 넣고 끓이다가 물이 끓어오르면 다시마를 건지고 조금 더 끓여 육수를 우려낸다.",
+        "2. 주꾸미는 내장과 입, 눈을 제거하고 4cm 크기로 잘라 준비한다.",
+        "3. 김치는 국물을 꽉 짜서 한입 크기로 썰고, 무는 편 썰고, 마늘은 다지고, 대파는 어슷 썰고, 양파는 굵게 채 썰고, 두부는 납작하게 썬다.",
+        "4. 냄비에 참기름을 두르고, 김치, 무, 양파가 투명해질 때까지 볶다가 육수를 붓고 끓으면 주꾸미, 다진 마늘을 넣어 더 끓인다.",
+        "5. 김칫국물과 배즙을 2:1로 섞은 뒤 찌개에 넣어 간을 맞춘다.",
+        "6. 두부, 팽이버섯을 넣고 한소끔 끓여 마무리한다"
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230306/20230306022942_1678080582607.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230306/20230306023039_1678080639676.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230306/20230306023103_1678080663820.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230313/20230313110637_1678673197807.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230306/20230306023149_1678080709863.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230306/20230306023210_1678080730863.jpg"
+      ],
+      "recipe": 44
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 45,
+      "turn": [
+        "1. 다시마육수재료를 물에 넣고 끓여\n육수를 낸다.",
+        "2. 느타리버섯은 가닥가닥 떼고, 두부는\n썰고, 콩나물은 머리와 꼬리를 떼\n손질한다.",
+        "3. 배추와 미나리를 데친다.",
+        "4. 돼지고기, 쇠고기에 고기완자양념을\n넣어 반죽한 뒤 빚어 완자를 만든다.",
+        "5. 냄비에 모든 재료를 돌려 담은 뒤\n육수를 부어 끓인다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00276_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00276_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00276_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00276_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00276_5.png"
+      ],
+      "recipe": 45
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 46,
+      "turn": [
+        "1. 통조림 햄은 한 번 데친 뒤 우유에\n담가두고, 실곤약은 식초를 넣은\n끓는 물에 살짝 데친다.",
+        "2. 양파는 굵게 채 썰고, 느타리버섯은\n찢고, 표고버섯은 모양대로 썰고,\n팽이버섯은 끝부분을 잘라내고,\n청양고추와 붉은 고추는 어슷 썬다.",
+        "3. 감자, 무, 두부는 0.5㎝ 두께로 썰고,\n애호박은 반달썰기 하고 깻잎은\n채 썰어 찬물에 담가 매운맛을\n제거한다.",
+        "4. 사골육수에 다시마를 넣어 끓인 후\n한 김 식힌다.",
+        "5. 다진 돼지고기에 다진 파, 다진 마늘,\n후춧가루, 소금을 섞어 완자를\n만들고 밀가루와 달걀물을 묻혀\n식용유(5g)를 두른 팬에 부친다.",
+        "6. 냄비에 재료를 보기 좋게 담고\n사골육수를 부은 뒤 끓이다가\n쑥갓과 들깻가루를 넣어 마무리한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00277_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00277_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00277_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00277_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00277_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00277_6.png"
+      ],
+      "recipe": 46
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 47,
+      "turn": [
+        "1. 육수 재료를 넣고 20분간 끓여\n육수를 낸다.",
+        "2. 닭가슴살과 당근을 다져 모양을\n잡은 뒤 김 오른 찜기에 넣고 찐다.",
+        "3. 고추, 대파는 어슷 썰고, 쑥갓,\n표고버섯, 애호박, 김치는 먹기\n좋은 크기로 썰고, 팽이버섯은\n밑동을 잘라 손질한다.",
+        "4. 당면과 숙주는 뜨거운 물에 데쳐\n준비한다.",
+        "5. 양념장 재료를 섞은 뒤 육수(13g)를\n넣고 양념장을 만든다.",
+        "6. 준비한 재료를 담고 육수를 부은 뒤\n양념장을 넣고 끓여 마무리한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00278_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00278_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00278_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00278_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00278_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00278_6.png"
+      ],
+      "recipe": 47
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 48,
+      "turn": [
+        "1. 통조림 햄을 썰어 끓는 물에 데친다.",
+        "2. 애호박은 반달모양으로 썰고, 두부는 도톰하게 썰고, 팽이버섯은 3등분하고, 청양고추는 어슷 썬다.",
+        "3. 김치는 씻어서 잘게 썬다.",
+        "4. 양념장을 만든다.",
+        "5. 냄비에 물과 다시마를 넣고 살짝 끓여 육수를 만든다.",
+        "6. 육수에 손질한 재료를 담고 양념장의 1/2 분량을 넣고 중간 불에 끓이다가 쑥갓과 남은 양념장을 넣고 약한 불에 조금 더 끓여 마무리한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230308/20230308012641_1678249601913.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230308/20230308012702_1678249622285.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230308/20230308012717_1678249637881.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230308/20230308012732_1678249652118.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230308/20230308012747_1678249667092.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230308/20230308012805_1678249685798.jpg"
+      ],
+      "recipe": 48
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 49,
+      "turn": [
+        "1. 굴은 깨끗이 씻은 뒤 김 오른 찜기에\n찐다.",
+        "2. 굴을 쪄낸 물(250g)에 멸치,\n표고버섯 밑동을 넣고 끓인 뒤\n멸치와 표고버섯 밑동을 건져내\n육수를 만든다.",
+        "3. 느타리버섯은 밑동을 제거한 후\n씻어 세로로 찢고, 표고버섯은\n0.5㎝ 두께로 썬다.",
+        "4. 무는 나박 썰고 양파는 채 썰고,\n미나리는 3㎝ 길이로 썰고,\n대파와 고추는 송송 썬다.",
+        "5. 육수에 굴, 다진 마늘, 무, 양파,\n버섯을 넣고 끓인다.",
+        "6. 들깻가루와 순두부를 넣고 한소끔\n끓인 뒤 국간장과 소금으로 간을\n맞추고 대파, 붉은 고추, 미나리를\n올려 마무리한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00280_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00280_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00280_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00280_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00280_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00280_6.png"
+      ],
+      "recipe": 49
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 50,
+      "turn": [
+        "1. 냄비에 육수 재료를 넣어 끓인다.",
+        "2. 콩을 충분히 불려 믹서기에 물을\n넣고 갈아 준비한다.",
+        "3. 느타리버섯은 찢고, 표고버섯은 먹기\n좋은 크기로 자르고, 애호박과\n양파는 깍둑 썰고, 대파와 고추는\n송송 썬다.",
+        "4. 바지락은 해감해 준비한다.",
+        "5. 육수에 콩, 느타리버섯, 표고버섯,\n애호박, 저염된장, 새우, 바지락을\n넣고 끊인다.",
+        "6. 순두부를 넣고 끊인 후 양파, 대파,\n붉은 고추, 풋고추를 넣고 한소끔\n끓여 마무리한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00281_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00281_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00281_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00281_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00281_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00281_6.png"
+      ],
+      "recipe": 50
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 51,
+      "turn": [
+        "1. 표고버섯은 머리와 밑동을 분리하고, 머리 부분은 잘게 썬다.",
+        "2. 애호박, 감자, 양파는 한입 크기로 썰고, 미나리와 부추는 3cm 길이로 썰고, 대파와 청양고추는 송송 썬다.",
+        "3. 물에 다시마, 표고버섯 밑동을 넣고 끓으면 건더기를 건져 육수를 만든다.",
+        "4. 육수에 저염된장과 찹쌀가루를 풀어 한소끔 끓이고, 감자와 다진마늘을 넣어 끓인다.",
+        "5. 애호박과 표고버섯을 넣고, 순두부, 양파, 들깻가루, 저염국간장을 넣어 한소끔 끓인다.",
+        "6. 대파, 청양고추, 미나리, 부추를 듬뿍 올려 마무리한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230308/20230308053656_1678264616396.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230308/20230308053712_1678264632312.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230308/20230308053727_1678264647414.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230308/20230308053743_1678264663037.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230308/20230308053800_1678264680719.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230308/20230308053819_1678264699729.jpg"
+      ],
+      "recipe": 51
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 52,
+      "turn": [
+        "1. 토란은 2×2㎝로 썬다.",
+        "2. 표고버섯은 채 썰고, 고추는\n어슷하게 썬다.",
+        "3. 냄비에 물(500ml)을 넣고 물이\n끓으면 백합을 넣고 끓여 육수를\n낸다.",
+        "4. 조개가 입을 벌리면 토란과\n들깻가루, 표고버섯을 넣고 끓인다.",
+        "5. 육수가 어느 정도 걸쭉해지면\n순두부를 넣고 끓인다.",
+        "6. 붉은 고추와 청양고추를 올려\n마무리한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00283_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00283_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00283_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00283_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00283_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00283_6.png"
+      ],
+      "recipe": 52
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 53,
+      "turn": [
+        "1. 토마토홀과 토마토는 송송 다져주고, 마늘,\n양파를 냄비에서 볶은 후 믹서에 갈아 토마토\n스프를 만들어준다.",
+        "2. 만들어진 스프를 볶아서 신맛을 날려준다.",
+        "3. 먹물파스타면은 삶은 뒤 오일에 버무려주고\n볶아준다.",
+        "4. 양파, 애호박, 가지, 2가지색 파프리카를 먹기\n좋게 잘라 팬에 볶아준다.",
+        "5. 접시에 볶아진 채소와 파스타면을 서로 다시\n볶아준다.",
+        "6. 치즈를 곱게 다져주고 접시에 파스타면을\n올린 뒤, 토마토스프와 치즈가루를 뿌려 완성\n한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00385_01.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00385_02.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00385_03.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00385_04.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00385_05.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00385_06.png"
+      ],
+      "recipe": 53
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 54,
+      "turn": [
+        "1. 양파, 당근, 오이는 채 썰어준다.",
+        "2. 열무 물김치와 탄산수, 어간장을 넣어 국수\n국물을 만들어준다.",
+        "3. 달걀은 삶아준다.",
+        "4. 실곤약은 삶을 때 레몬즙을 넣어서 곤약의\n특이한 냄새를 제거한다.",
+        "5. 물기를 제거한 곤약에 어간장을 넣어 밑간을\n해준다.",
+        "6. 그릇에 담고 국물을 부어주고, 채소와 달걀을\n곁들여 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00386_01.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00386_02.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00386_03.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00386_04.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00386_05.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00386_06.png"
+      ],
+      "recipe": 54
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 55,
+      "turn": [
+        "1. 오징어는 솔방울 모양으로 잘라준다.",
+        "2. 미니 파프리카, 양파, 청홍고추는 적당한\n크기로 잘라준다.",
+        "3. 다진마늘을 볶다가 오징어를 넣어 볶는다.",
+        "4. 홀토마토와 양념장 재료를 넣어 볶는다.",
+        "5. 팬을 약간 태우는 듯 해서 불맛과 매운맛을\n더해준다.",
+        "6. 접시에 담아주고 볶은 현미를 뿌려 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00387_01.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00387_02.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00387_03.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00387_04.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00387_05.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00387_06.png"
+      ],
+      "recipe": 55
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 56,
+      "turn": [
+        "1. 뚜껑을 만들 배의 윗동을 자르고, 수저로\n배 속을 판다.",
+        "2. 탄산수와 생강청을 미리 30분 전에 섞어준다.",
+        "3. 방울토마토를 먹기 좋게 잘라준 후 속을 파낸\n배에 후르츠 칵테일과 방울토마토를 넣어준다.",
+        "4. 과일로 채워진 배에 미리 만든 생강탄산수를\n부어준다.",
+        "5. 배를 뚜껑을 덮어 호일로 싼 후 팬에 구워준다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00388_01.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00388_02.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00388_03.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00388_04.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00388_05.png"
+      ],
+      "recipe": 56
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 57,
+      "turn": [
+        "1. 쇠고기는 칼집을 살짝 넣어준 후 건 바질을\n뿌려 1시간 정도 숙성시킨다.",
+        "2. 감자는 껍질을 벗긴 후 먹기 좋게 잘라 뜨거운\n물에 70% 정도 익혀준다.",
+        "3. 익혀준 감자를 버터를 살짝 바른 후 팬에\n파슬리가루를 뿌려 구워준다.",
+        "4. 시금치는 데쳐내 물기를 제거하고 다진 양파와\n함께 버터에 볶아준다.",
+        "5. 사과는 사방 1cm 크기로 자른 후 레몬즙을\n살짝 뿌려준 후 버터에 볶아 소스를 만들어\n준다.",
+        "6. 숙성된 소고기를 팬에 구워주고 곁들이 채소와\n소스를 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00389_01.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00389_02.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00389_03.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00389_04.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00389_05.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00389_06.png"
+      ],
+      "recipe": 57
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 58,
+      "turn": [
+        "1. 오징어는 내장을 빼서 흐르는 물에 깨끗이\n씻은 후, 다리는 송송 다져주고 레몬즙을\n살짝 뿌려준다.",
+        "2. 강낭콩은 먼저 삶아준다.",
+        "3. 피망, 당근, 양파, 대파, 파프리카는 송송\n다져준다.",
+        "4. 잘라준 오징어다리는 다진마늘과 살짝\n볶아준다.",
+        "5. 볼에 귀리밥을 넣고 카레가루를 넣고 모든\n재료를 섞어 소 재료를 만든다.",
+        "6. 오징어 안쪽에 밀가루를 묻혀주고 소를 채워\n팬에 구워준다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00390_01.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00390_02.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00390_03.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00390_04.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00390_05.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00390_06.png"
+      ],
+      "recipe": 58
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 59,
+      "turn": [
+        "1. 소고기는 사방 2cm 정도의 크기로 잘라서\n물에서 80% 정도까지 익혀준 후 냉수에\n깨끗하게 세척해 준다.",
+        "2. 양파는 먹기 좋게 자르고 물 400g과 함께\n간장 물을 만들어준다.",
+        "3. 간장 물에 데쳐 놓은 소고기부터 졸여주기\n시작한다.",
+        "4. 메추리알을 넣고 함께 졸여준다.",
+        "5. 방울토마토, 양파, 마늘, 꽈리고추까지 넣고\n마지막으로 졸여준다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00391_01.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00391_02.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00391_03.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00391_04.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00391_05.png"
+      ],
+      "recipe": 59
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 60,
+      "turn": [
+        "1. 당근, 양파, 샐러리는 사방 2cm 정도로\n잘라준다.",
+        "2. 레몬은 껍질을 아주 곱게 채 썰어준다.",
+        "3. 소고기는 사방 3cm 정도로 자르고 흰 후추를\n뿌려준다.",
+        "4. 홀토마토는 먹기 좋게 부수어 준 후 볶아준다.",
+        "5. 팬에 버터를 넣고 소고기부터 볶기 시작하다\n채소를 넣고 볶아준다. 이 때 두꺼운 채소부터\n볶아주는 것이 고기랑 익는 시간이 같아진다.",
+        "6. 마지막에 다져 놓은 홀토마토를 넣고 함초소금\n으로 간을 한 후 레몬껍질을 올려서 마무리\n한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00392_01.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00392_02.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00392_03.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00392_04.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00392_05.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00392_06.png"
+      ],
+      "recipe": 60
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 61,
+      "turn": [
+        "1. 소스 재료를 이용해 맛 간장으로 만든 데리\n야끼소스를 만들어준다.",
+        "2. 참치는 손질해 수분을 빼준 후 흰 후추로\n밑간을 해준다.",
+        "3. 생강은 아주 곱게 채 썰어 냉수에 헹군다.",
+        "4. 대파도 아주 가늘게 채 썰어서 냉수에 담가\n매운맛을 빼준다.",
+        "5. 버터를 올린 팬에 삼치를 약불에서 구워준다.",
+        "6. 구워진 참치를 소스에 졸여주고 대파채를\n올린다. 삼치에 소스를 뿌리고 생강채를 올려\n완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00393_01.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00393_02.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00393_03.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00393_04.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00393_05.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00393_06.png"
+      ],
+      "recipe": 61
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 62,
+      "turn": [
+        "1. 삼겹살은 길이로 잘라서 마늘기름, 통후추,\n로즈마리에 마리네이드 해준다.",
+        "2. 대파는 흰 부분만 잘라 구워주고, 꽈리고추도\n함께 구워준다.",
+        "3. 대파는 가늘게 채 썰어 물에 담가준다.",
+        "4. 물에 담가진 대파를 물기를 빼고 양념해준다.",
+        "5. 삼겹살을 꼬치에 끼워 굽고 구워진 채소,\n대파채와 함께 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00394_01.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00394_02.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00394_03.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00394_04.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00394_05.png"
+      ],
+      "recipe": 62
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 63,
+      "turn": [
+        "1. 저염 된장을 물 300cc에 풀어준 뒤 건새우를\n담가 30분 정도 담가준 뒤 살짝 끓여준다.",
+        "2. 새우를 풀어준 된장 물을 체에 걸러준다.",
+        "3. 아욱은 뜨거운 물에 데쳐서 먹기 좋게 썬다.",
+        "4. 냄비에 밥과 된장 물을 풀어 끓인다.",
+        "5. 어느 정도 끓으면 칵테일새우와 건져 놓았던\n새우를 다시 넣어준다.",
+        "6. 불을 끄기 전에 아욱을 넣어 한 번 더 끓여준\n후 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00395_01.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00395_02.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00395_03.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00395_04.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00395_05.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00395_06.png"
+      ],
+      "recipe": 63
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 64,
+      "turn": [
+        "1. 감자를 슬라이스 하여 찜통에 찐 후 체에\n으깬다. 깻잎을 잘게 채 썰어서 냉수에 담가\n향을 빼준다.",
+        "2. 베이컨을 한 번 데쳐내 송송 썰어준 후 다진\n마늘과 볶아준다.",
+        "3. 으깬 감자와 깻잎을 다져서 반죽을 만들고\n엄지손가락 크기로 떼어 밀가루를 뿌리고,\n둥글게 빚은 후 포크로 자국을 내 뇨끼를 만든다.",
+        "4. 만들어진 뇨끼를 삶아 건져준다.",
+        "5. 팬에 버터를 넣고 다진양파, 다진마늘, 다진\n대파, 볶은 베이컨, 새송이, 흰후추를 볶다가\n우유와 생크림, 설탕을 넣고 끓여준다.",
+        "6. 뇨끼를 넣어 한 번 더 끓여준 뒤 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00396_01.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00396_02.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00396_03.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00396_04.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00396_05.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00396_06.png"
+      ],
+      "recipe": 64
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 65,
+      "turn": [
+        "1. 단호박은 껍질을 까고 작게 잘라주고, 양파도\n작게 잘라준다.",
+        "2. 브로콜리는 뜨거운 물에 데쳐내 준 후 송송\n잘라준다.",
+        "3. 찹쌀가루는 물 100g에 풀어준다.",
+        "4. 단호박과 양파는 물 300g에 삶아준다.",
+        "5. 단호박과 양파가 익으면 믹서에 갈아서 다시\n끓여준 뒤 찹쌀가루물을 넣어 끓여준다.",
+        "6. 호박죽이 끓어오르면 치즈가루를 넣어준 후\n볶은 현미랑 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00397_01.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00397_02.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00397_03.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00397_04.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00397_05.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00397_06.png"
+      ],
+      "recipe": 65
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 66,
+      "turn": [
+        "1. 팽이버섯을 송송 다진 후 라이스버거 재료로\n라이스버거를 만들어준다.",
+        "2. 만들어준 버거는 팬에 구워준다.",
+        "3. 토마토와 미나리를 먹기 좋게 잘라서 겉절이를\n만들어준다.",
+        "4. 떡갈비 재료로 떡 갈비를 만들어준다.",
+        "5. 만들어진 떡갈비를 구워준다.",
+        "6. 접시에 토마토 겉절이를 담고 라이스버거와\n떡갈비를 올려 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00398_01.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00398_02.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00398_03.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00398_04.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00398_05.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00398_06.png"
+      ],
+      "recipe": 66
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 67,
+      "turn": [
+        "1. 오이고추는 배를 갈라 씨를 제거하고 세척 후 절임물에 절여준다.",
+        "2. 영양부추, 연근은 송송 다지고 무는 채 썬다.",
+        "3. 손질한 부추와 연근, 무에 절임물을 조금 넣고 절인다.",
+        "4. 고춧가루, 생강청, 통깨를 절임채소에 섞어 소를 만든다.",
+        "5. 오이고추 속에 소를 채워 넣는다.",
+        "6. 오이고추를 그릇에 담고 남은 물을 부어 마무리한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230306/20230306052119_1678090879888.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230306/20230306052136_1678090896972.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230306/20230306052154_1678090914303.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230306/20230306052208_1678090928991.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230306/20230306052224_1678090944885.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/20230306/20230306052240_1678090960385.jpg"
+      ],
+      "recipe": 67
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 68,
+      "turn": [
+        "1. 닭은 포를 떠서 생강즙과 정종을 섞어\n발라 놓는다.",
+        "2. 시금치는 살짝 데쳐 썰고, 당근, 양파,\n샐러리, 파프리카는 약 6Cm 길이로\n채를 썰어 절반은 닭고기말이에 사용\n하고, 절반은 곁들임채소로 사용한다.",
+        "3. 느타리는 끓는 물에 소금을 넣고 데쳐\n손으로 찢어놓고, 포를 뜬 닭가슴살에\n느타리와 썰어 놓은 채소를 넣어 말아\n주고, 육수를 끓여서 말아놓은 닭을\n넣고 익혀낸다.",
+        "4. 주꾸미와 새우는 끓는 물에 살짝 데치고,\n청경채는 반으로 썰어 살짝 데쳐 준비\n한다.",
+        "5. 튀김기름 온도가 180℃ 정도 되면\n누룽지를 넣고 튀겨 기름을 밭쳐 놓는다.",
+        "6. 닭을 넣은 육수(③)에 간장과 녹말,\n마늘, 소금, 후춧가루를 넣고 끓이다가,\n곁들임채소로 남겨 놓은 채소(②)와\n데쳐 놓은 해물 및 청경채를 넣고 한 번 더\n끓인 뒤 튀겨진 누룽지를 넣어 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00500_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00500_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00500_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00500_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00500_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00500_6.png"
+      ],
+      "recipe": 68
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 69,
+      "turn": [
+        "1. 광어는 포를 길게 떠서 소금과\n후춧가루에 밑간을 해 놓는다.",
+        "2. 아몬드와 호두는 입자있게 다져\n준비한다.",
+        "3. 밑간이 되어 있는 광어포에 밀가루와\n달걀물을 입힌다.",
+        "4. 달걀물을 입힌 광어살에 다시 다져\n놓은 견과류를 입혀 준다.",
+        "5. 팬에 올리브 오일을 넣고, 팬이 따끈해\n지면 광어 살을 조심스럽게 앞뒤로\n익혀 접시에 담는다.",
+        "6. 플레인요거트에 꿀과 레몬즙을 넣고\n골고루 섞어 광어스테이크소스를\n만들어 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00501_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00501_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00501_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00501_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00501_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00501_6.png"
+      ],
+      "recipe": 69
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 70,
+      "turn": [
+        "1. 감자는 껍질을 벗겨 삶는다.",
+        "2. 오이와 당근은 어슷썰기를 하고 양파는\n채를 썰어놓는다.",
+        "3. 썰어 놓은 채소에 소금과 물을 넣고\n살짝 절여, 물기를 짜놓는다.",
+        "4. 삶아 놓은 감자를 채에 내리고\n생크림을 넣어 섞는다.",
+        "5. 생크림을 넣은 감자에 절여 놓은 채소와\n모짜렐라치즈를 넣고 골고루 섞는다.",
+        "6. 섞여진 감자를 크로켓 모양을 만들어\n밀가루, 달걀물, 빵가루를 묻혀 튀김기름\n170~180℃ 온도에서 바삭하게 튀겨\n냅킨에 올려 기름을 제거하고, 접시에\n담아 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00502_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00502_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00502_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00502_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00502_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00502_6.png"
+      ],
+      "recipe": 70
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 71,
+      "turn": [
+        "1. 두부는 소창에 넣고, 짜서 물기를\n제거하고, 으깨어 놓는다.",
+        "2. 으깬 두부에 소금과 코코넛 밀크를\n넣고 골고루 섞는다.",
+        "3. 섞여진 두부를 김이 오른 찜통에 넣고\n약 5분 정도 찐다.",
+        "4. 당근과 양파는 사각지게 썰고,\n브로컬리는 데쳐 당근 크기로 썰어\n놓는다.",
+        "5. 돼지고기와 감자는 당근 크기로 썰어\n주고, 냄비에 버터를 녹여 돼지고기를\n먼저 볶다가 양파와 당근, 감자,\n브로컬리를 넣고 다시 볶아 준 뒤,\n쪄놓은 두부를 넣어 한 번 더 볶아준다.",
+        "6. 볶아지는 냄비(⑤)에 카레 가루를 넣고\n살짝 더 볶아준 뒤, 물을 넣고 자작하게\n끓여 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00503_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00503_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00503_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00503_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00503_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00503_6.png"
+      ],
+      "recipe": 71
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 72,
+      "turn": [
+        "1. 쌀은 불려 놓고, 마늘은 작게 다지고,\n양파는 새송이와 파프리카와 함께\n입자를 크게 다져 준비한다.",
+        "2. 소고기는 포를 넓게 떠서 소금과\n후춧가루를 뿌려 밑간을 해 놓는다.",
+        "3. 냄비에 버터를 넣고, 마늘과 양파를\n먼저 볶다가, 새송이와 파프리카를\n넣는다.",
+        "4. ③번에 다시 불린 쌀과 강화를 넣고,\n볶다가 불을 줄여, 쌀이 익을 때까지\n익혀 준다.",
+        "5. 쌀이 익으면, 밑간이 되어 있는\n소고기에 넣고 돌돌 말아 준비한다.",
+        "6. 하얀 된장에 생크림을 넣어 골고루 섞고,\n냄비에 육수를 넣고 생크림을 섞은 하얀\n된장을 넣어 끓으면, 말아놓은 소고기를\n넣고 은근히 졸여 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00504_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00504_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00504_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00504_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00504_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00504_6.png"
+      ],
+      "recipe": 72
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 73,
+      "turn": [
+        "1. 닭고기살은 작게 썰어 소금과 후춧\n가루를 살짝 뿌려 밑간을 하고 달걀을\n넣어 섞는다.",
+        "2. 달걀을 넣어 섞은 닭고기 살에 녹말\n가루를 넣어 골고루 묻힌다.",
+        "3. 국수는 각각 끓는 물에 살짝 데쳐 물기를\n빼놓는다.",
+        "4. 물기가 빠진 국수는 튀김기름 170℃\n온도에서 각각 작은 채에 그대로 살짝\n튀겨 둥지를 만든 후 기름을 냅킨에\n빼 놓는다.",
+        "5. 녹말가루를 묻힌 닭고기살도 튀김\n기름에 튀겨 기름을 빼 놓은 둥지국수\n위에 올린다.",
+        "6. 냄비에 레몬과 설탕을 넣고 물을 넣어\n끓이다가 레몬은 건져 내고, 마늘과\n생강, 연유, 식초, 녹말을 풀어 넣고\n살짝 한 번 더 끓여 녹말소스를 만들어,\n튀겨진 닭고기 위에 올려 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00505_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00505_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00505_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00505_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00505_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00505_6.png"
+      ],
+      "recipe": 73
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 74,
+      "turn": [
+        "1. 새우는 꼬리를 자르고 내장을 제거\n한다.",
+        "2. 스테이크 소고기는 소금과 로즈마리를\n뿌리고 후춧가루를 살짝 뿌려 놓는다.",
+        "3. 아스파라거스는 팬에 기름 없이\n굽는다.",
+        "4. 새송이와 가지는 길게 썰어 브로컬리와\n함께 기름 없이 팬에 살짝 구워 놓는다.",
+        "5. 팬에 버터를 살짝 넣고 새우를 굽고,\n스테이크를 구워 접시에 담는다.",
+        "6. 팬에 와인과 설탕을 넣고 끓이다가,\n당근, 양파와 토마토 마늘, 대파를 다져\n넣고 볶듯이 끓이다가 발사믹소스를\n넣고 한 번 더 졸인 소스를 스테이크\n위에 얹고, 브로컬리와 새송이, 가지,\n아스파라거스를 함께 놓아 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00506_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00506_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00506_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00506_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00506_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00506_6.png"
+      ],
+      "recipe": 74
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 75,
+      "turn": [
+        "1. 통 삼겹살에 함초와 소금, 후춧가루를\n뿌려 숙성을 시킨다.",
+        "2. 부추는 약 6cm 길이로 썰고, 양파는\n채를 썰어 놓고, 당근은 납작하게\n편으로 썰어 준비한다.",
+        "3. 연두부는 잘게 다져 놓는다.",
+        "4. 유자청에 쌈장과 설탕, 생크림을 넣어\n골고루 섞는다.",
+        "5. 골고루 섞은 유자청에 다져 놓은\n연두부를 넣어 섞어 냄비에 넣고, 썰어\n놓은 양파와 당근을 넣어 은근히 끓여\n소스를 만들어 놓는다.",
+        "6. 숙성시킨 통삼겹은 버터를 녹인 팬에\n살짝 구워 다시 오븐에서 20분 정도\n익힌 후 먹기 좋게 썰은 뒤, 접시에\n부추를 깔고 그 위에 구워진 삼겹을\n올리고 소스를 얹어 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00507_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00507_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00507_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00507_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00507_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00507_6.png"
+      ],
+      "recipe": 75
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 76,
+      "turn": [
+        "1. 돼지고기와 소고기를 섞어, 매실액을\n넣고 30분 정도 냉장고에서 숙성을\n시킨다.",
+        "2. 숙성된 돼지고기와 소고기에 다진마늘,\n로즈마리, 빵가루, 후춧가루를 넣고\n골고루 섞는다.",
+        "3. 파프리카는 반으로 잘라 그 안에 씨를\n수저를 이용해서 파낸다.",
+        "4. 속을 파낸 파프리카에 양념한 고기를\n넣고, 꼭꼭 눌러 두툼하게 잘라 구워\n접시에 담는다.",
+        "5. 양파는 입자있게 다져 팬에 기름을\n넣고 은근히 볶아 양파 향을 낸다.",
+        "6. 볶아진 팬(⑤)에 준비한 플레인요거트와\n설탕, 매실액을 넣고 끓이다가, 식초와\n녹말을 넣고 한 번 더 끓여 소스를\n완성한다. 햄버거스테이트(④)에 소스를\n얹고, 어린잎을 올려 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00508_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00508_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00508_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00508_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00508_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00508_6.png"
+      ],
+      "recipe": 76
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 77,
+      "turn": [
+        "1. 삼치는 반으로 잘라지지 않게 편으로\n떠서 소금을 살짝 뿌려 잠시 말려\n놓는다.",
+        "2. 손질을 한 삼치에 녹말가루를 입혀\n팬에 기름을 두르고 구워 접시에 담아\n놓는다.",
+        "3. 생강은 잘게 썰어, 물에 섞은 후\n거름종이에 걸러 생강즙을 만든다.",
+        "4. 유자청에 만들어 놓은 생강즙을 넣고\n섞는다.",
+        "5. 냄비에 레몬을 넣고, 물을 넣고 은근히\n끓인다.",
+        "6. 레몬을 끓인 물에 ④번을 넣고 졸여\n소스를 만든 후 접시에 담아 놓은 삼치\n위에 소스로 올려 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00509_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00509_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00509_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00509_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00509_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00509_6.png"
+      ],
+      "recipe": 77
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 78,
+      "turn": [
+        "1. 마늘은 곱게 다지고 양파, 당근,\n방울토마토는 입자있게 다진다.",
+        "2. 토마토는 씨와 껍질을 제거하고 채를\n썰어놓는다.",
+        "3. 브로컬리를 끓는 물에 데쳐 찬물에\n헹구어 작게 썰어 준비한다.",
+        "4. 펜네는 끓는 물에 약 10분 정도\n삶아 건진다.",
+        "5. 건져진 펜네는 올리브오일을 넣어\n무친 후 그릇에 담아놓는다.",
+        "6. 냄비에 오일을 넣고 마늘과 양파를\n볶다가 당근과 방울토마토를 넣어\n볶으면서 육수를 붓고 설탕과 소금,\n레몬즙, 월계수잎을 넣고 끓인 뒤\n월계수잎을 건져내고, 차갑게 식힌 후\n그릇에 담겨 있는 펜네에 토마토채(②)와\n브로컬리(③)를 함께 넣어 담아 완성\n한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00510_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00510_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00510_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00510_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00510_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00510_6.png"
+      ],
+      "recipe": 78
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 79,
+      "turn": [
+        "1. 닭고기살은 끓는 물에 데쳐 손으로\n찢고, 느타리버섯도 데쳐 손으로 찢어\n준비한다.",
+        "2. 사과는 씨를 제거하고 약 6cm 길이로\n채를 썰고, 오이와 파프리카도 같은\n길이로 채를 썰어 놓는다.",
+        "3. 애호박은 반달로 썰어 식초에 살짝\n절여서 볶고, 양파는 채를 썰어 물에\n잠시 담가 놓는다.",
+        "4. 아몬드는 우유를 넣어 갈아 준비한다.",
+        "5. 머스터드에 올리고당을 넣어 잘 섞어\n준다.",
+        "6. 또띠아를 팬에 기름 없이 굽고, 그 안에\n닭고기 살과 느타리버섯, 오이, 사과,\n파프리카와 호박을 넣어 속이 보이도록\n말아놓고, ④번과 ⑤번은 섞어서 소스를\n만들어 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00511_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00511_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00511_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00511_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00511_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00511_6.png"
+      ],
+      "recipe": 79
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 80,
+      "turn": [
+        "1. 닭고기살은 소금과 후춧가루, 생강즙과\n정종을 뿌린 후 우유를 살짝 발라 숙성을\n시킨다.",
+        "2. 오이는 길게 껍질째 썰어 놓는다.",
+        "3. 토마토는 반으로 잘라 편으로 썰어\n준비한다.",
+        "4. 두부는 소창으로 물기를 꼭 짜 놓는다.",
+        "5. 물기를 제거 시킨 두부에 흑임자를\n넣고 골고루 섞은 뒤 냄비에 넣고\n우유와 함께 은근히 끓여 속을 만든다.",
+        "6. 팬에 토마토를 먼저 구워 접시에 담고,\n숙성된 닭고기를 구워 올린 뒤, 그 위에\n오이로 원형기둥을 만들고 구운\n닭고기를 다시 올려 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00512_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00512_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00512_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00512_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00512_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00512_6.png"
+      ],
+      "recipe": 80
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 81,
+      "turn": [
+        "1. 통오징어는 다리를 떼어내고 내장을\n제거시켜 통째로 깨끗이 씻어 준비\n한다.",
+        "2. 양파와 당근, 부추, 생강은 입자있게\n썰고, 견과류는 다져 준비한다.",
+        "3. 두부는 물기를 짠 후 수저로 으깨어\n놓는다.",
+        "4. 잘게 썰은 오징어 다리와 썰어 놓은\n채소, 견과류(②), 곱게 다진 대파와\n마늘, 그리고 소금과 녹말가루를 두부\n(③)와 함께 골고루 섞어 순대속을\n만든다.",
+        "5. 손질된 오징어 속 안에 준비한 속을\n채워 넣는다.",
+        "6. 오징어순대에 레몬즙과 정종, 생강즙을\n섞어 바른 뒤 찜통에 김이 오르면\n오징어순대를 넣어 약 10분 정도 쪄서\n완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00513_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00513_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00513_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00513_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00513_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00513_6.png"
+      ],
+      "recipe": 81
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 82,
+      "turn": [
+        "1. 모시조개는 물에 소금을 넣고, 담그어\n해감을 한다.",
+        "2. 연어는 사각지게 썰어 준비한다.",
+        "3. 당근, 양파, 감자는 사각크기로 썰어\n놓고, 청피망은 채를 썰어 당근과\n비슷한 길이로 잘라둔다.",
+        "4. 냄비에 버터와 밀가루를 넣고 볶다가\n채소를 넣어 같이 볶는다.",
+        "5. 볶아지는 냄비에 모시조개와 육수를\n넣고 끓인다.",
+        "6. 거품을 걷어내고, 월계수 잎과 통후추,\n통마늘을 넣고 끓이다가 연어와\n생크림을 넣어 한 소큼 끓으면 완성한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00514_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00514_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00514_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00514_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00514_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00514_6.png"
+      ],
+      "recipe": 82
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 83,
+      "turn": [
+        "1. 시금치와 브로콜리는 끓는 물에 소금을\n넣고 살짝 데친다.",
+        "2. 데친 시금치, 브로콜리와 바질을\n믹서에 갈아 준다.",
+        "3. 새우는 껍질을 벗겨 손질한다",
+        "4. 끓는 물에 스파게티를 10분 정도 삶아\n건진다.",
+        "5. 삶아진 스파게티는 팬에 올리브오일을\n넣고 볶는다.",
+        "6. 갈아 놓은 시금치소스에 생크림을 넣고\n한소끔 끓이면서 볶은 파스타를 넣은\n뒤 새우를 올린다"
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00663_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00663_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00663_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00663_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00663_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00663_6.png"
+      ],
+      "recipe": 83
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 84,
+      "turn": [
+        "1. 광어는 비늘을 제거하고 포를 뜬다.",
+        "2. 손질된 광어에 레몬과 청주를 뿌려\n숙성 시킨다.",
+        "3. 저염간장에 레몬즙, 와사비,\n발사믹소스를 넣고 소스를 만든다.",
+        "4. 당근, 애호박은 쿠퍼로 동글동글하게\n깎는다.",
+        "5. 당근, 애호박, 콜리플라워는 김이 오른\n찜통에 5분 정도 쪄 낸다.",
+        "6. 가지와 파프리카는 팬에 굽고,\n숙성시킨 광어도 팬에 구워 접시에\n담고 쪄 낸 야채를 담은 뒤 소스를\n올린다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00664_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00664_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00664_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00664_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00664_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00664_6.png"
+      ],
+      "recipe": 84
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 85,
+      "turn": [
+        "1. 연근은 껍질을 벗긴다.",
+        "2. 껍질벗긴 연근은 얇게 썬다.",
+        "3. 물 200g에 식초 10g을 섞는다",
+        "4. 식촛물에 썬 연근을 담근다.",
+        "5. 연근을 체에 건져 물기를 뺀다.",
+        "6. 연근을 바삭하게 튀긴 뒤 천일염을\n살짝 뿌리고, 계피가루를 묻힌다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00665_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00665_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00665_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00665_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00665_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00665_6.png"
+      ],
+      "recipe": 85
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 86,
+      "turn": [
+        "1. 쌀은 깨끗이 씻어 30분 정도 불려 밥을\n짓는다.",
+        "2. 달걀을 풀어 소금을 넣고 지단을\n만들어 채썬다.",
+        "3. 도라지, 애호박, 양파, 홍고추는 채를\n썰어 소금에 살짝 절여 볶고, 청포묵은\n채를 썰어 참기름에 버무린다.",
+        "4. 돼지 안심은 소금, 후춧가루로 양념 한\n뒤 팬에 익힌다.",
+        "5. 찬물에 식초, 설탕, 소금을 넣고 채 썬\n오이를 넣어 냉국을 만든다.",
+        "6. 고추장에 고춧가루를 섞어 쌈밥장을\n만들고, 라이스페이퍼를 물에 담궈\n건져 밥과 준비한 야채, 달걀지단,\n쌈무, 쌈밥장을 올려 돌돌 말고 데친\n미나리로 묶는다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00666_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00666_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00666_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00666_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00666_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00666_6.png"
+      ],
+      "recipe": 86
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 87,
+      "turn": [
+        "1. 닭은 살을 발라 소금, 후춧가루로\n밑간을 한다.",
+        "2. 오곡을 불려 밥을 짓는다.",
+        "3. 오이, 아스파라거스, 당근, 양파는\n길이대로 채썬다.",
+        "4. 닭살에 지어 놓은 오곡밥을 넣는다",
+        "5. 오곡밥을 넣은 닭살에 카레가루를\n골고루 묻힌다.",
+        "6. 팬에 기름을 두르고 5번을 올려 은근히\n익혀 접시에 담고, 썰어 놓은 야채를\n닭살위에 담은 뒤 디종머스터드를\n올린다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00667_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00667_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00667_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00667_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00667_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00667_6.png"
+      ],
+      "recipe": 87
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 88,
+      "turn": [
+        "1. 광어는 비늘을 벗기고 포를 떠 소금,\n후춧가루를 뿌린다.",
+        "2. 콜리플라워는 팬에 볶는다.",
+        "3. 감자와 양파를 썰어 콜리플라워와 함께\n볶는다.",
+        "4. ?번에 우유를 넣는다.",
+        "5. ?를 믹서로 곱게 간 뒤, 끓인다.",
+        "6. 가지, 당근. 단호박은 둥근 모양으로\n만들어 팬에 시금치와 함께 익히고,\n광어도 팬에 구워 접시에 담아\n컬리플라워 소스를 올린다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00668_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00668_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00668_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00668_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00668_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00668_6.png"
+      ],
+      "recipe": 88
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 89,
+      "turn": [
+        "1. 다시마와 건새우를 넣고 은근히 끓여\n차갑게 식힌 뒤 육수를 만든다.",
+        "2. 차갑게 식힌 육수는 체에 걸려내고\n오미자를 넣고 소금으로 간을 한다.",
+        "3. 콜라비, 피망, 파프리카는 납작하게\n썬다.",
+        "4. 육수는 체에 거른다",
+        "5. 오미자를 넣고 소금으로 간을 한다.",
+        "6. 통에 썰어놓은 야채와 무화과를 담고\n?를 넣는다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00669_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00669_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00669_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00669_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00669_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00669_6.png"
+      ],
+      "recipe": 89
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 90,
+      "turn": [
+        "1. 닭가슴살은 포를 떠 소금과 후춧가루로\n밑간을 한다.",
+        "2. 새우는 껍질을 벗겨 손질한다.",
+        "3. 베이컨은 끓는 물에 데친다.",
+        "4. 마늘과 바질은 다진 뒤 버터에 섞는다.",
+        "5. 닭가슴살에 베이컨과 다진 버터를\n올린다.",
+        "6. 냄비에 마늘과 바질을 섞은 버터,\n치즈를 넣고 끓이다가 ?를 놓고\n졸인다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00670_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00670_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00670_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00670_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00670_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00670_6.png"
+      ],
+      "recipe": 90
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 91,
+      "turn": [
+        "1. 표고버섯은 따뜻한 물에 불린다.",
+        "2. 감자는 강판에 간다.",
+        "3. 고수는 잘게 다진다.",
+        "4. 당근은 곱게 다지고, 양파와 홍고추도\n다진다.",
+        "5. 감자에 다진 당근과 양파, 홍고추를\n섞는다.",
+        "6. 불린 표고버섯은 기둥을 자르고 바닥에\n녹말가루를 묻혀 ?번을 넣고 김이\n오른 찜통에 약 10분 정도 찐다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00671_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00671_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00671_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00671_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00671_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00671_6.png"
+      ],
+      "recipe": 91
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 92,
+      "turn": [
+        "1. 새우는 껍질을 벗겨 다진다.",
+        "2. 오징어는 소금으로 껍질을 벗겨\n다진다.",
+        "3. 애호박, 깻잎, 대추는 곱게 채썬다.",
+        "4. 채썬 애호박과 깻잎은 소금에 살짝\n절인 뒤 물기를 짠다.",
+        "5. 밀가루에 찹쌀가루, 애호박, 깻잎,\n대추채와 다진 새우, 오징어를 넣고\n팬에 기름을 둘러 전병을 만든 뒤 돌돌\n말아 썰어 접시에 담는다.",
+        "6. 저염간장과 식초, 설탕을 넣고 소스를\n만든다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00672_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00672_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00672_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00672_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00672_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00672_6.png"
+      ],
+      "recipe": 92
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 93,
+      "turn": [
+        "1. 닭다리는 기름기를 제거하고 냄비에 물 3컵 반을 부어 통마늘과 삶아 육수를 만든다.",
+        "2. 삶은 마늘을 체에 걸러 으깬 뒤 다시 육수에 넣는다.",
+        "3. 닭 육수 2컵 반에 찬밥을 넣고 밥알이 무르도록 끓인다.",
+        "4. 삶은 닭다리 살을 발라 잘게 찢어 넣는다.",
+        "5. 감자, 양파, 당근, 부추는 잘게 다진다.",
+        "6. 4에 5를 넣고 끓인 뒤 소금, 후춧가루로 간 한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/673-1.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/673-2.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/673-3.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/673-4.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/673-5.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/673-6.jpg"
+      ],
+      "recipe": 93
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 94,
+      "turn": [
+        "1. 물 1컵 반에 국멸치와 건다시마를 넣어 멸치다시마국물을 만든다.",
+        "2. 국물을 우린 다시마는 채썬다.",
+        "3. 느타리버섯은 끓는 물에 데친 후 찢는다.",
+        "4. 감자와 두부는 3~4cm 가량으로 채를 썰고 홍고추와 대파는 어슷썬다.",
+        "5. 멸치다시마국물 1컵에 감자를 넣고 끓인 뒤 느타리버섯을 넣어 한소끔 끓이고 두부, 파, 다진 마늘, 홍고추를 넣고 소금으로 간 한다.",
+        "6. 채 썬 다시마를 고명으로 얹는다"
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/674-1.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/674-2.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/674-3.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/674-4.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/674-5.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/674-6.jpg"
+      ],
+      "recipe": 94
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 95,
+      "turn": [
+        "1. 양념장 재료를 모두 섞어 냉장고에서 하루 숙성시킨다.",
+        "2. 민어는 비늘을 긁고 지느러미, 내장을 제거하여 흐르는 물에 씻어 5cm 길이로 토막 낸다.",
+        "3. 소고기는 채 썰어 다진 마늘, 후추로 밑간한다.",
+        "4. 무는 나박 썰기, 애호박은 반달 썰기, 애느타리는 한입 크기로 찢고 고추와 대파는 어슷 썬다.",
+        "5. 냄비에 참기름을 두르고 소고기를 볶다가 물 1컵 반과 무를 넣고 양념장을 풀어 끓인다.",
+        "6. 무가 반 정도 익으면 민어와 채소를 넣고 한소끔 끓인 뒤 어슷 썬 대파와 생강즙을 넣어 살짝 끓이고 소금 간하고 쑥갓을 넣는다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/677-1.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/677-2.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/677-3.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/677-4.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/677-5.jpg",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/677-6.jpg"
+      ],
+      "recipe": 95
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 96,
+      "turn": [
+        "1. 냄비에 육수 재료와 물(400g)을\n넣고 푹 끓인다.",
+        "2. 양송이버섯을 잘게 다진 뒤 버터에\n살짝 볶아 건져 한김 식힌 뒤\n닭다리살과 닭가슴살, 아몬드를 다져\n볶은 양송이버섯과 섞어 동그랗게\n빚어 밀가루옷을 입힌다.",
+        "3. 식용유(15g)를 두른 팬에서 겉을\n노릇하게 굽는다.",
+        "4. 육수(150g), 우유, 들깻가루를 끓여\n소스를 만든 뒤 아몬드 치킨볼과\n브로콜리를 넣고 졸인다.",
+        "5. 마늘은 편 썰어 낮은 온도의\n식용유에서 바삭하게 튀긴다.",
+        "6. 접시에 아몬드치킨볼을 담고\n튀긴 마늘을 얹어 마무리한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00297_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00297_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00297_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00297_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00297_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00297_6.png"
+      ],
+      "recipe": 96
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 97,
+      "turn": [
+        "1. 현미와 쌀을 씻어 30분간 불린 뒤\n물기를 빼고, 다시마를\n우려낸 물(불린 쌀 동량)로 밥을 지어\n식힌 후 새우가루를 넣어 섞는다.",
+        "2. 양배추는 15~20분 정도 쪄서\n준비한다.",
+        "3. 얇게 저민 쇠고기를 팬에 올려\n익힌다.",
+        "4. 달래는 0.5㎝ 정도로 송송 썰어\n간장, 참기름에 버무린다.",
+        "5. 김발에 양배추, 고기, 밥 순서대로\n올려 돌돌 말아 양배추롤을 만든다.",
+        "6. 롤을 한입 크기로 썰어 담고\n달래 무침을 얹은 뒤 송송 썬\n붉은 고추를 올려 마무리한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00298_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00298_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00298_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00298_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00298_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00298_6.png"
+      ],
+      "recipe": 97
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 98,
+      "turn": [
+        "1. 피망, 파프리카는 5㎝ 길이로 채\n썰고, 시금치는 갈아둔다.",
+        "2. 베이컨 위에 동태포를 올리고\n그 위에 피망과 파프리카를 올려\n돌돌 만다.",
+        "3. 저염버터에 생크림을 넣어서 농도를\n맞춘 후 갈아놓은 시금치를 넣어\n시금치소스를 만든다.",
+        "4. 달군 팬에 흰살생선베이컨말이를\n올려 완전히 익힌다.",
+        "5. 접시에 담아 시금치소스를\n곁들인 뒤 새싹채소로 장식하여\n마무리한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00299_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00299_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00299_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00299_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00299_5.png"
+      ],
+      "recipe": 98
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 99,
+      "turn": [
+        "1. 콩고기를 15분~20분 정도 물에\n불려 물기를 완전히 제거한 뒤\n저염간장양념으로 버무려 볶는다.",
+        "2. 아보카도, 바나나, 가지, 연근은\n깍둑 썰고, 방울토마토는 반을\n가른다.",
+        "3. 팬에 식용유(5g)를 둘러가며\n방울토마토, 가지, 연근을 각각\n볶아 건진다.",
+        "4. 만두피를 작은 체에 넣고\n바구니 모양으로 만들어 튀긴다.",
+        "5. 콩고기와 아보카도, 바나나,\n방울토마토, 가지, 연근을 튀긴\n만두피에 담은 뒤 허브오일드레싱을\n곁들여 마무리한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00300_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00300_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00300_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00300_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00300_5.png"
+      ],
+      "recipe": 99
+    }
+  },
+  {
+    "model": "recipe.subrecipe",
+    "fields": {
+      "id": 100,
+      "turn": [
+        "1. 수박껍질은 흰 부분만 사용해\n작게 깍둑 썰고, 토마토는 껍질을\n벗겨 속씨를 제거해 작게 깍둑썬다.",
+        "2. 닭가슴살은 수비드해 익힌 뒤\n한입 크기로 썬다.",
+        "3. 감자, 가지, 양파, 피망,\n아스파라거스는 깍둑 썬 뒤\n닭가슴살과 함께 볶는다.",
+        "4. 팬에 복분자를 넣고 살짝 졸인 뒤\n레몬즙을 섞어 복분자소스를 만든다.",
+        "5. 접시에 퀴노아를 두른 후\n닭가슴살과 감자, 가지, 양파, 피망,\n아스파라거스를 올리면서 중간\n중간에 토마토와 수박,\n리코타치즈를 넣는다.",
+        "6. 맨 위에 퀴노아를 살짝 올려주고\n양상추, 플레인 요구르트,\n어린잎채소를 얹어 마무리한다."
+      ],
+      "img": [
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00301_1.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00301_2.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00301_3.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00301_4.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00301_5.png",
+        "http://www.foodsafetykorea.go.kr/uploadimg/cook/20_00301_6.png"
+      ],
+      "recipe": 100
+    }
+  }
+]
