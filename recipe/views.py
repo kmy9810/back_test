@@ -1,3 +1,4 @@
+from django.db.models import Q
 from rest_framework.generics import get_object_or_404
 from rest_framework import status, permissions
 from rest_framework.views import APIView
@@ -117,3 +118,13 @@ class CommentView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
+class SearchView(APIView):
+    # 테스트용 get -> 삭제 예정!
+    def get(self, request):
+        return Response('검색어를 입력해주세요.', status=status.HTTP_200_OK)
+
+    def post(self, request):
+        search_word = request.data['search']
+        search_list = Recipe.objects.filter(Q(name__icontains=search_word)|Q(ingredients__icontains=search_word))
+        serializer = RecipeSerializer(search_list, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
