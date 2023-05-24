@@ -128,7 +128,9 @@ def google_callback(request):
     # 1-1. json으로 변환 & 에러 부분 파싱
     token_req_json = token_req.json()
     error = token_req_json.get("error")
-    
+    print("###################")
+    print(token_req_json)
+    print("###################")
     # 1-2. 에러 발생 시 종료
     if error is not None:
         raise JSONDecodeError(error)
@@ -170,7 +172,7 @@ def google_callback(request):
         print(data)
         
         accept = requests.post(
-            f"http://localhost:8000/users/google/login/finish/", data=data)
+            f"{BASE_URL}users/google/login/finish/", data=data)
         accept_status = accept.status_code
         
         
@@ -180,7 +182,6 @@ def google_callback(request):
         
         accept_json = accept.json()
         accept_json.pop('user', None)
-        print(accept_json)
         return JsonResponse(accept_json) # 여기를 바꿔서 토큰을 받아오기
     
     except User.DoesNotExist:
@@ -195,10 +196,9 @@ def google_callback(request):
         
         accept_json = accept.json()
         accept_json.pop('user', None)
-        return JsonResponse(accept_json)
+        return JsonResponse(data)
 
 class GoogleLogin(SocialLoginView):
     adapter_class = google_view.GoogleOAuth2Adapter
     callback_url = GOOGLE_CALLBACK_URI
     client_class = OAuth2Client
-
