@@ -8,6 +8,7 @@ from .models import Recipe, SubRecipe, Review, Comment
 from .serializers import RecipeSerializer, ReviewSerializer, CommentSerializer, SearchSerializer
 
 
+# 계란, 두부, 버섯, 양파, 대파, 고추, 감자, 브로콜리, 당근,
 # 레시피 전체 조회 및 등록
 class RecipeView(APIView):
     # permission_classes = [permissions.IsAuthenticated]
