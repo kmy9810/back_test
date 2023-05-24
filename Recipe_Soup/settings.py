@@ -1,21 +1,26 @@
 from pathlib import Path
 import os
-from datetime import timedelta
 import json
 import sys
+from datetime import timedelta
+import pymysql
 
 import mysettings
+
+pymysql.version_info = (1, 4, 6, 'final', 0)
+pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# social login의 키 관리를 위해서
 ROOT_DIR = os.path.dirname(BASE_DIR)
 SECRET_BASE_FILE = os.path.join(BASE_DIR, 'secrets.json')
 
 secrets = json.loads(open(SECRET_BASE_FILE).read())
 for key, value in secrets.items():
     setattr(sys.modules[__name__], key, value)
-   
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -37,9 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-     # site 설정도!
     'django.contrib.sites',
-    
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
@@ -55,13 +58,25 @@ INSTALLED_APPS = [
     
     'users',
     'pay',
+    'pay',
     'recipe',
     'ai',
+    # dj-rest-auth
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
+    # django-allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.kakao',
+    'allauth.socialaccount.providers.google',
 ]
 
-SITE_ID = 1
+# 웹사이트 복수 생성시 사이트 지정을 위해 필요
+SITE_ID = 2
 
 AUTH_USER_MODEL = 'users.User'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -79,26 +94,19 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
     ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ),
 }
 
-# REST_FRAMEWORK = {
-
-#     'DEFAULT_AUTHENTICATION_CLASSES': (
-
-#         'rest_framework_simplejwt.authentication.JWTAuthentication',
-#     )
-
-# }
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -156,15 +164,17 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ACCOUNT_USER_MODEL_USERNAME_FIELD = None # username 필드 사용 x
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None  # username 필드 사용 x
 ACCOUNT_EMAIL_REQUIRED = True            # email 필드 사용 o
 ACCOUNT_USERNAME_REQUIRED = False        # username 필드 사용 x
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_USE_JWT = True
 
