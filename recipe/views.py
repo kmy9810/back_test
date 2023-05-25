@@ -8,14 +8,15 @@ from .models import Recipe, SubRecipe, Review, Comment
 from .serializers import RecipeSerializer, ReviewSerializer, CommentSerializer, SearchSerializer
 
 
-# 계란, 두부, 버섯, 양파, 대파, 고추, 감자, 브로콜리, 당근,
-# 레시피 전체 조회 및 등록
+# 레시피 카테 고리별 조회 및 등록
 class RecipeView(APIView):
     # permission_classes = [permissions.IsAuthenticated]
-    def get(self, request):
-        recipe = Recipe.objects.all()
+    def get(self, request, category_id):
+        category = {1: "국&찌개", 2: "밥", 3:"반찬", 4: "후식", 5: "일품"}
+        recipe = Recipe.objects.filter(category=category[category_id])
+        print(recipe, category[category_id])
         serializer = RecipeSerializer(recipe, many=True)
-        return Response(serializer.data[:10], status=status.HTTP_200_OK)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     # 크롤링 데이터라 post 의도가 명확하지 않음! -> 수정예정
     def post(self, request):
@@ -54,10 +55,15 @@ class ReviewView(APIView):
     def get(self, request, recipe_id=None):
         review = Review.objects.all()
         serializer = ReviewSerializer(review, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.data[::-1], status=status.HTTP_200_OK)
 
     def post(self, request, recipe_id):
         # 이미지가 빈값으로 올 땐 copy를 사용해서 변경!
+        # deepcopy -> copy모듈 임포트? -> 완전 복사!(안전)
+        # test = request.data
+        # print(id(test))
+        # print(id(request.data))
+        # print(id(data))
         if request.data['image'] == 'undefined':
             data = request.data.copy()
             data['image'] = ''
@@ -103,7 +109,7 @@ class CommentView(APIView):
     def get(self, request, pk):
         comment = Comment.objects.filter(review_id=pk)
         serializer = CommentSerializer(comment, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.data[::-1], status=status.HTTP_200_OK)
 
     # pk = review_id
     def post(self, request, pk):

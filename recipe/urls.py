@@ -4,7 +4,7 @@ from Recipe_Soup import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('recipe/', views.RecipeView.as_view(), name='recipe_view'),
+    path('recipe-list/<int:category_id>/', views.RecipeView.as_view(), name='recipe_view'),
     path('recipe/<int:recipe_id>/', views.RecipeDetailView.as_view(), name='recipe_detail_view'),
     path('review/<int:recipe_id>/', views.ReviewView.as_view(), name='review_view'),
     path('review/', views.ReviewView.as_view(), name='review_view'),
