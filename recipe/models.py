@@ -36,7 +36,8 @@ class Review(models.Model):
     recipe = models.ForeignKey('Recipe', on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     content = models.TextField()
-    # img = models.ImageField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
+    star = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
