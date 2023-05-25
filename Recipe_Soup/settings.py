@@ -13,17 +13,6 @@ pymysql.install_as_MySQLdb()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# social login의 키 관리를 위해서
-# ROOT_DIR = os.path.dirname(BASE_DIR)
-# SECRET_BASE_FILE = os.path.join(BASE_DIR, 'secrets.json')
-
-# secrets = json.loads(open(SECRET_BASE_FILE).read())
-# for key, value in secrets.items():
-#     setattr(sys.modules[__name__], key, value)
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
@@ -43,20 +32,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    
+
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     'dj_rest_auth',
     'dj_rest_auth.registration',
-    
+
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.kakao',
     'allauth.socialaccount.providers.google',
-    
+
     'users',
     'pay',
     'recipe',
@@ -64,7 +53,7 @@ INSTALLED_APPS = [
 ]
 
 # 웹사이트 복수 생성시 사이트 지정을 위해 필요
-SITE_ID = 1
+SITE_ID = 2
 
 AUTH_USER_MODEL = 'users.User'
 
@@ -82,10 +71,7 @@ ROOT_URLCONF = 'Recipe_Soup.urls'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    ),
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',

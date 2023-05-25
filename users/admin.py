@@ -1,7 +1,6 @@
 from django.contrib import admin
 from users.models import User
 
-<<<<<<< HEAD
 
 admin.site.register(User)
 
@@ -15,6 +14,3 @@ admin.site.register(User)
 
 
 # admin.site.unregister(OutstandingToken)
-=======
-admin.site.register(User)
->>>>>>> e725c037ab15604c1f939de96b5d8adadb0bb728
