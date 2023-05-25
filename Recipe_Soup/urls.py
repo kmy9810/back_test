@@ -1,9 +1,12 @@
 from django.contrib import admin
 from django.urls import path, include
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('users/', include('dj_rest_auth.urls')),
-    path('users/', include('allauth.urls')),
+    path('dj-rest-auth/', include('dj_rest_auth.urls')), # 일반 회원가입?
+    path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')), # 이메일 인증?
+    path('users/', include('allauth.urls')), # 소셜로그인
     path('users/', include('users.urls')),
+    
 ]
