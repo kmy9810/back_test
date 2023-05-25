@@ -211,7 +211,7 @@ def google_callback(request):
         #     status=status.HTTP_200_OK,
         # )
         # return response
-        return JsonResponse(accept_json) # 여기를 바꿔서 토큰을 받아오기
+        return JsonResponse(accept_json,status=status.HTTP_200_OK ) # 여기를 바꿔서 토큰을 받아오기
 
     except User.DoesNotExist:
         # 기존에 해당 이메일로 가입된 유저가 없으면 새로 가입 => 새로 회원가입 & 해당 유저의 jwt 발급
