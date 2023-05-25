@@ -57,7 +57,13 @@ class ReviewView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request, recipe_id):
-        serializer = ReviewSerializer(data=request.data)
+        # 이미지가 빈값으로 올 땐 copy를 사용해서 변경!
+        if request.data['image'] == 'undefined':
+            data = request.data.copy()
+            data['image'] = ''
+            serializer = ReviewSerializer(data=data)
+        else:
+            serializer = ReviewSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save(recipe_id=recipe_id)
             slack_message = f"[새로운 후기 알람] \n" \
