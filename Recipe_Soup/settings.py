@@ -1,7 +1,5 @@
 from pathlib import Path
 import os
-import json
-import sys
 from datetime import timedelta
 import pymysql
 
@@ -12,6 +10,9 @@ pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -76,8 +77,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.SessionAuthentication',
-        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
 
@@ -146,7 +146,7 @@ STATIC_URL = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
-
+SOCIALACCOUNT_LOGIN_ON_GET = True  # 중간에 선택하는 페이지 없이 바로 되도록
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None  # username 필드 사용 x
 ACCOUNT_EMAIL_REQUIRED = True            # email 필드 사용 o
 ACCOUNT_USERNAME_REQUIRED = False        # username 필드 사용 x
@@ -210,7 +210,7 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-CORS_ORIGIN_ALLOW_ALL = True # 모든 도메인에서 요청을 허용하려면 True로 설정
+CORS_ORIGIN_ALLOW_ALL = True  # 모든 도메인에서 요청을 허용하려면 True로 설정
 
 CORS_ALLOW_HEADERS = [
     'authorization-token',
