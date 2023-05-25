@@ -9,18 +9,18 @@ from django.http import JsonResponse
 from json.decoder import JSONDecodeError
 from rest_framework import status
 from users.models import User
-
+import os
 
 BASE_URL = 'http://127.0.0.1:8000/'
 KAKAO_CALLBACK_URI = BASE_URL + 'users/kakao/callback/'
 
-state = getattr(settings, 'STATE')
+state = os.environ.get('STATE')
 
 # KAKAO_REST_API_KEY json파일 형태로 보관하여 연결
 
 
 def kakao_login(request):
-    rest_api_key = getattr(settings, 'KAKAO_REST_API_KEY')
+    rest_api_key = os.environ.get('KAKAO_REST_API_KEY')
     return redirect(
         f"https://kauth.kakao.com/oauth/authorize?client_id={rest_api_key}&redirect_uri={KAKAO_CALLBACK_URI}&response_type=code"
     )
@@ -32,18 +32,18 @@ def kakao_login(request):
 
 
 def kakao_callback(request):
-    rest_api_key = getattr(settings, 'KAKAO_REST_API_KEY')
+    rest_api_key = os.environ.get('KAKAO_REST_API_KEY')
     code = request.GET.get("code")
     redirect_uri = KAKAO_CALLBACK_URI
     """
     Access Token Request
     """
-    print(rest_api_key)
-    print(redirect_uri)
-    print(code)
     token_req = requests.get(
         f"https://kauth.kakao.com/oauth/token?grant_type=authorization_code&client_id={rest_api_key}&redirect_uri={redirect_uri}&code={code}")
     token_req_json = token_req.json()
+    print("############")
+    print(token_req_json)
+    print("############")
     error = token_req_json.get("error")
     if error is not None:
         raise JSONDecodeError(error)
@@ -51,9 +51,10 @@ def kakao_callback(request):
     """
     Email Request
     """
-    profile_request = requests.get(
+    profile_request = requests.post(
         "https://kapi.kakao.com/v2/user/me", headers={"Authorization": f"Bearer {access_token}"})
     profile_json = profile_request.json()
+    print(profile_json)
     error = profile_json.get("error")
     if error is not None:
         raise JSONDecodeError(error)
