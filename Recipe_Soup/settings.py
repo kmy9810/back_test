@@ -81,6 +81,10 @@ REST_FRAMEWORK = {
     ),
 }
 
+REST_USE_JWT = True
+JWT_AUTH_COOKIE = 'jwt_token'
+JTW_AUTH_REFRESH_COOKIE = 'jwt_refresh_token'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -145,9 +149,9 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+LOGIN_REDIRECT_URL = 'http://127.0.0.1:5500/index.html'
 
 SOCIALACCOUNT_LOGIN_ON_GET = True  # 중간에 선택하는 페이지 없이 바로 되도록
-ACCOUNT_USER_MODEL_USERNAME_FIELD = None  # username 필드 사용 x
 ACCOUNT_EMAIL_REQUIRED = True            # email 필드 사용 o
 ACCOUNT_USERNAME_REQUIRED = False        # username 필드 사용 x
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
@@ -209,6 +213,7 @@ SOCIALACCOUNT_PROVIDERS = {
         'OAUTH_PKCE_ENABLED': True,
     }
 }
+
 
 CORS_ORIGIN_ALLOW_ALL = True  # 모든 도메인에서 요청을 허용하려면 True로 설정
 
