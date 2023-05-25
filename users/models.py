@@ -1,10 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import BaseUserManager, AbstractUser
-import dj_rest_auth
-
+from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, password):
+    def create_user(self, email, password=None):
         if not email:
             raise ValueError("Users must have an email address")
 
@@ -12,27 +10,26 @@ class UserManager(BaseUserManager):
             email=self.normalize_email(email),
         )
         user.set_password(password)
-        user.save(using=self._db)
+        user.save()
         return user
 
-    def create_superuser(self, email, password):
+    def create_superuser(self, email, password=None):
         user = self.create_user(
             email,
             password=password,
         )
         user.is_admin = True
-        user.is_superuser = True
-        user.is_staff = True
-        user.save(using=self._db)
+        user.save()
         return user
 
 
-class User(AbstractUser):
+class User(AbstractBaseUser):
     username = None
-    email = models.EmailField(verbose_name="email address",
-                              max_length=255,
-                              unique=True,)
-
+    email = models.EmailField(
+        verbose_name="email address",
+        max_length=255,
+        unique=True,
+    )
     is_subscribe = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)
@@ -53,6 +50,9 @@ class User(AbstractUser):
     def has_module_perms(self, app_label):
         return True
 
+    @property
+    def is_staff(self):
+        return self.is_admin
     @property
     def is_staff(self):
         return self.is_admin
