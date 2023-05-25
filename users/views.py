@@ -234,4 +234,18 @@ class GoogleLogin(SocialLoginView):
     client_class = OAuth2Client
     print(adapter_class)
 
+class MyPage(APIView):
+    permission_classes = [permissions.IsAuthenticated]
 
+    def get(self, request, user_id):
+        user_profile = get_object_or_404(User, id=user_id)
+        serializer = UserProfileSerializer(user_profile)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def delete(self, request, user_id):
+        user = get_object_or_404(User, id=user_id)
+        if request.user == user:
+            user.delete()
+            return Response('삭제되었습니다!', status=status.HTTP_204_NO_CONTENT)
+        else:
+            return Response("권한이 없습니다!", status=status.HTTP_403_FORBIDDEN)
