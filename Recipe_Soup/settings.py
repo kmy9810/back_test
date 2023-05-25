@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
+    'corsheaders',
     'rest_framework_simplejwt.token_blacklist',
     'dj_rest_auth',
     'dj_rest_auth.registration',
@@ -69,6 +70,7 @@ SITE_ID = 1
 AUTH_USER_MODEL = 'users.User'
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -142,7 +144,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -221,3 +223,16 @@ SOCIALACCOUNT_PROVIDERS = {
         'OAUTH_PKCE_ENABLED': True,
     }
 }
+
+
+CORS_ORIGIN_ALLOW_ALL = True # 모든 도메인에서 요청을 허용하려면 True로 설정
+
+CORS_ALLOW_HEADERS = [
+    'authorization-token',
+    'content-type',  # 'Content-Type' 헤더 추가
+    'authorization',  # 'authorization' 헤더 추가
+]
+
+# 이미지 삽입
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
