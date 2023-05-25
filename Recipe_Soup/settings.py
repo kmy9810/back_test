@@ -1,7 +1,5 @@
 from pathlib import Path
 import os
-import json
-import sys
 from datetime import timedelta
 import pymysql
 
@@ -12,14 +10,6 @@ pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-# social login의 키 관리를 위해서
-# ROOT_DIR = os.path.dirname(BASE_DIR)
-# SECRET_BASE_FILE = os.path.join(BASE_DIR, 'secrets.json')
-
-# secrets = json.loads(open(SECRET_BASE_FILE).read())
-# for key, value in secrets.items():
-#     setattr(sys.modules[__name__], key, value)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -84,11 +74,10 @@ ROOT_URLCONF = 'Recipe_Soup.urls'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.AllowAny'
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.SessionAuthentication',
-        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
 
@@ -157,7 +146,7 @@ STATIC_URL = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
-
+SOCIALACCOUNT_LOGIN_ON_GET = True # 중간에 선택하는 페이지 없이 바로 되도록
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None  # username 필드 사용 x
 ACCOUNT_EMAIL_REQUIRED = True            # email 필드 사용 o
 ACCOUNT_USERNAME_REQUIRED = False        # username 필드 사용 x
