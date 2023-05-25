@@ -15,7 +15,7 @@ class RecipeView(APIView):
     def get(self, request):
         recipe = Recipe.objects.all()
         serializer = RecipeSerializer(recipe, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.data[:10], status=status.HTTP_200_OK)
 
     # 크롤링 데이터라 post 의도가 명확하지 않음! -> 수정예정
     def post(self, request):
@@ -51,8 +51,8 @@ class RecipeDetailView(APIView):
 
 # 리뷰 조회 및 작성
 class ReviewView(APIView):
-    def get(self, request, recipe_id):
-        review = Review.objects.filter(recipe_id=recipe_id)
+    def get(self, request, recipe_id=None):
+        review = Review.objects.all()
         serializer = ReviewSerializer(review, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
