@@ -144,7 +144,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -232,3 +232,7 @@ CORS_ALLOW_HEADERS = [
     'content-type',  # 'Content-Type' 헤더 추가
     'authorization',  # 'authorization' 헤더 추가
 ]
+
+# 이미지 삽입
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
