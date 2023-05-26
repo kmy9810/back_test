@@ -208,7 +208,7 @@ def google_callback(request):
 
         # 뭔가 중간에 문제가 생기면 에러
         if accept_status != 200:
-            return JsonResponse({'err_msg': 'failed to signin'}, status=accept_status)
+                                                                                return JsonResponse({'err_msg': 'failed to signin'}, status=accept_status)
 
 
         accept_json = accept.json()
