@@ -227,3 +227,5 @@ CORS_ALLOW_HEADERS = [
 # 이미지 삽입
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+SOCIALACCOUNT_QUERY_EMAIL = True

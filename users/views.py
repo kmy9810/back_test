@@ -71,22 +71,23 @@ def kakao_callback(request):
     error = profile_json.get("error")
     if error is not None:
         raise JSONDecodeError(error)
-    kakao_account = profile_json.get('kakao_account')
+    # kakao_account = profile_json.get('kakao_account')
     """
     kakao_account에서 이메일 외에
     카카오톡 프로필 이미지, 배경 이미지 url 가져올 수 있음
     print(kakao_account) 참고
     """
     # print(kakao_account)
-    email = kakao_account.get('email')
+    id = profile_json.get('id')
     """
     Signup or Signin Request
     """
     try:
-        user = User.objects.get(email=email)
         # 기존에 가입된 유저의 Provider가 kakao가 아니면 에러 발생, 맞으면 로그인
         # 다른 SNS로 가입된 유저
-        social_user = SocialAccount.objects.get(user=user)
+        social_user = SocialAccount.objects.get(uid=id)
+        user = social_user.user
+
         if social_user is None:
             return JsonResponse({'err_msg': 'email exists but not social user'}, status=status.HTTP_400_BAD_REQUEST)
         if social_user.provider != 'kakao':
@@ -159,13 +160,14 @@ def google_callback(request):
 
     # 2-2. 성공 시 이메일 가져오기
     email_req_json = email_req.json()
-    email = email_req_json.get('email')
+    id = email_req_json.get('user_id')
+    print(email_req_json)
 
     # 3. 전달받은 이메일, access_token, code로 회원가입 or 로그인 진행
     try:
         # 전달받은 이메일로 등록된 유저가 있는지 탐색
-        user = User.objects.get(email=email)
-        social_user = SocialAccount.objects.get(user=user)
+        social_user = SocialAccount.objects.get(uid=id)
+        user = social_user.user
 
         # 소셜 유저가 아니거나 소셜 유저이지만 구글계정이 아닐 때 에러처리
         if social_user is None:
@@ -326,13 +328,14 @@ def github_callback(request):
     if error is not None:
         raise JSONDecodeError(error)
 
-    email = user_json.get("email")
-    print(email)
-    
+    id = user_json.get("id")
+
     try:
-        user = User.objects.get(email=email)
-        social_user = SocialAccount.objects.get(user=user)
-        
+        social_user = SocialAccount.objects.get(uid=id)
+        user = social_user.user
+
+        print(337)
+
         if social_user is None:
             return JsonResponse({'err_msg': 'email exists but not social user'}, status=status.HTTP_400_BAD_REQUEST)
         if social_user.provider != 'github':
@@ -342,18 +345,18 @@ def github_callback(request):
         accept = requests.post(
             f"{BASE_URL}users/github/login/finish/", data=data)
         accept_status = accept.status_code
+
         if accept_status != 200:
             return JsonResponse({'err_msg': 'failed to signin'}, status=accept_status)
          # JWT 토큰 발급
         jwt_token = generate_jwt_token(user)
+
         response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
         response.set_cookie('jwt_token', jwt_token)
         return response
-    
-    except User.DoesNotExist:
 
+    except User.DoesNotExist:
         data = {'access_token': access_token, 'code': code}
-        print(data)
         accept = requests.post(
             f"{BASE_URL}users/github/login/finish/", data=data)
         accept_status = accept.status_code
@@ -361,7 +364,7 @@ def github_callback(request):
         if accept_status != 200:
             return JsonResponse({'err_msg': 'failed to signup'}, status=accept_status)
         
-         # JWT 토큰 발급
+         # JWT 토큰 발급 -> user 어디에??
         jwt_token = generate_jwt_token(user)
         response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
         response.set_cookie('jwt_token', jwt_token)
