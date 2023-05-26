@@ -178,10 +178,7 @@ def kakao_callback(request):
         response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
         response.set_cookie('jwt_token', jwt_token)
         return JsonResponse(accept_json, status=status.HTTP_200_OK)
-#  # user의 pk, email, first name, last name과 Access Token, Refresh token 가져옴
-#         accept_json = accept.json()
-#         accept_json.pop('user', None)
-#         return JsonResponse(accept_json)
+
 
 
 class KakaoLogin(SocialLoginView):
