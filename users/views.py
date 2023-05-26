@@ -19,7 +19,8 @@ from rest_framework import permissions
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.http import HttpResponseRedirect
-
+from django.http import HttpResponsePermanentRedirect
+import json
 
 BASE_URL = 'http://127.0.0.1:8000/'
 KAKAO_CALLBACK_URI = BASE_URL + 'users/kakao/callback/'
@@ -30,6 +31,8 @@ GITHUB_CALLBACK_URI = BASE_URL + 'users/github/callback/'
 state = os.environ.get('STATE')
 
 # token 발급
+
+
 def generate_jwt_token(user):
     refresh = RefreshToken.for_user(user)
     return {'refresh': str(refresh), 'access': str(refresh.access_token)}
@@ -169,12 +172,17 @@ def google_callback(request):
 
         # 소셜 유저가 아니거나 소셜 유저이지만 구글계정이 아닐 때 에러처리
         if social_user is None:
-            return JsonResponse({'err_msg': 'email exists but not social user'}, status=status.HTTP_400_BAD_REQUEST)
-        
+            return redirect("http://127.0.0.1:5500/index.html", )
+
         if social_user.provider != 'google':
-            response = HttpResponse(status=status.HTTP_400_BAD_REQUEST)
-            response['Location'] = "http://127.0.0.1:5500/index.html"
-            return response
+            # response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
+            # response.status_code = 302
+            # print("여기로 진입")
+            redirect_url = 'http://127.0.0.1:5500/index.html'
+            status_code = 400
+
+            redirect_url_with_status = f'{redirect_url}?status_code={status_code}'
+            return redirect(redirect_url_with_status)
 
         # 기존에 Google로 가입된 유저 => 로그인 & 해당 유저의 jwt 발급
         data = {'access_token': access_token, 'code': code}
@@ -185,6 +193,7 @@ def google_callback(request):
         # 뭔가 중간에 문제가 생기면 에러
         if accept_status != 200:
             return JsonResponse({'err_msg': 'failed to signin'}, status=accept_status)
+        
 
         # JWT 토큰 발급
         jwt_token = generate_jwt_token(user)
@@ -201,14 +210,13 @@ def google_callback(request):
         accept_status = accept.status_code
 
         if accept_status != 200:
-            response = HttpResponse(status=status.HTTP_400_BAD_REQUEST)
-            response['Location'] = "http://127.0.0.1:5500/index.html"
+            response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
+            response.status_code = accept_status  
             return response
-
-      # JWT 토큰 발급
-        jwt_token = generate_jwt_token(user)
+        
+       
         response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
-        response.set_cookie('jwt_token', jwt_token)
+        response.status_code = accept_status  
         return response
 
 
@@ -268,7 +276,7 @@ def naver_callback(request):
         if accept_status != 200:
             return JsonResponse({'err_msg': 'failed to signin'}, status=accept_status)
 
-         # jwt_token = generate_jwt_token(user)
+        # jwt_token = generate_jwt_token(user)
         # response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
         # response.set_cookie('jwt_token', jwt_token)
         # return response
@@ -285,13 +293,7 @@ def naver_callback(request):
         if accept_status != 200:
             return JsonResponse({'err_msg': 'failed to signup'}, status=accept_status)
         
-        # jwt_token = generate_jwt_token(user)
-        # response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
-        # response.set_cookie('jwt_token', jwt_token)
-        # return response
-        accept_json = accept.json()
-        accept_json.pop('user', None)
-        return JsonResponse(accept_json)
+        return HttpResponseRedirect("http://127.0.0.1:5500/index.html")
 
 
 class NaverLogin(SocialLoginView):
@@ -322,16 +324,23 @@ def github_callback(request):
     user_req = requests.get(f"https://api.github.com/user",
                             headers={"Authorization": f"Bearer {access_token}"})
     user_json = user_req.json()
+    print(user_json)
     error = user_json.get("error")
     if error is not None:
         raise JSONDecodeError(error)
 
     email = user_json.get("email")
     print(email)
+    id = user_json.get("id")
+    print(id)
+
+    # try:
+    # social_user = SocialAccount.objects.get(uid=id)
+    # user = social_user.user
     
     try:
-        user = User.objects.get(email=email)
-        social_user = SocialAccount.objects.get(user=user)
+        social_user = SocialAccount.objects.get(uid=id)
+        user = social_user.user
         
         if social_user is None:
             return JsonResponse({'err_msg': 'email exists but not social user'}, status=status.HTTP_400_BAD_REQUEST)
@@ -342,8 +351,12 @@ def github_callback(request):
         accept = requests.post(
             f"{BASE_URL}users/github/login/finish/", data=data)
         accept_status = accept.status_code
+        
         if accept_status != 200:
-            return JsonResponse({'err_msg': 'failed to signin'}, status=accept_status)
+            response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
+            response.status_code = accept_status  
+            return response
+        
          # JWT 토큰 발급
         jwt_token = generate_jwt_token(user)
         response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
@@ -359,7 +372,9 @@ def github_callback(request):
         accept_status = accept.status_code
         
         if accept_status != 200:
-            return JsonResponse({'err_msg': 'failed to signup'}, status=accept_status)
+            response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
+            response.status_code = accept_status  
+            return response
         
          # JWT 토큰 발급
         jwt_token = generate_jwt_token(user)
