@@ -4,27 +4,19 @@ from rest_framework.generics import get_object_or_404
 from rest_framework import status, permissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .models import Recipe, SubRecipe, Review, Comment
+from .models import Recipe, Review, Comment
 from .serializers import RecipeSerializer, ReviewSerializer, CommentSerializer, SearchSerializer
 
 
-# 계란, 두부, 버섯, 양파, 대파, 고추, 감자, 브로콜리, 당근,
-# 레시피 전체 조회 및 등록
+# 레시피 카테 고리별 조회 및 등록
 class RecipeView(APIView):
     # permission_classes = [permissions.IsAuthenticated]
-    def get(self, request):
-        recipe = Recipe.objects.all()
+    def get(self, request, category_id):
+        # category 모델 생성! -> 확장성을 위해 빼자
+        category = {1: "국&찌개", 2: "밥", 3: "반찬", 4: "후식", 5: "일품"}
+        recipe = Recipe.objects.filter(category=category[category_id])
         serializer = RecipeSerializer(recipe, many=True)
-        return Response(serializer.data[:10], status=status.HTTP_200_OK)
-
-    # 크롤링 데이터라 post 의도가 명확하지 않음! -> 수정예정
-    def post(self, request):
-        serializer = RecipeSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 # 레시피 상세 조회
@@ -54,16 +46,23 @@ class ReviewView(APIView):
     def get(self, request, recipe_id=None):
         review = Review.objects.all()
         serializer = ReviewSerializer(review, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.data[::-1], status=status.HTTP_200_OK)
 
     def post(self, request, recipe_id):
         # 이미지가 빈값으로 올 땐 copy를 사용해서 변경!
+        # deepcopy -> copy모듈 임포트? -> 완전 복사!(안전)
+        # test = request.data
+        # print(id(test))
+        # print(id(request.data))
+        # print(id(data))
+        # try, except 사용 고려 -> 추가 예외 처리!
         if request.data['image'] == 'undefined':
             data = request.data.copy()
             data['image'] = ''
             serializer = ReviewSerializer(data=data)
         else:
             serializer = ReviewSerializer(data=request.data)
+
         if serializer.is_valid():
             serializer.save(recipe_id=recipe_id)
             slack_message = f"[새로운 후기 알람] \n" \
@@ -103,7 +102,7 @@ class CommentView(APIView):
     def get(self, request, pk):
         comment = Comment.objects.filter(review_id=pk)
         serializer = CommentSerializer(comment, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.data[::-1], status=status.HTTP_200_OK)
 
     # pk = review_id
     def post(self, request, pk):
@@ -116,6 +115,7 @@ class CommentView(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     # pk = comment_id
+    # patch, put 차이 찾아 보자
     def patch(self, request, pk):
         comment = get_object_or_404(Comment, id=pk)
         serializer = CommentSerializer(comment, data=request.data, partial=True)
@@ -136,12 +136,12 @@ class SearchView(APIView):
     def post(self, request):
         search_word = request.data['search']
         ingredients = search_word.split(',')[:3]  # 최대 3개의 재료 추출
-
         # 재료를 모두 포함 하는 레시피 필터링
-        recipes = Recipe.objects.all()
-        filter_recipes = recipes
-        for ingredient in ingredients:
-            filter_recipes = recipes.filter(Q(ingredients__icontains=ingredient) | Q(name__icontains=ingredient))
+        # Recipe.objects.all() -> 다 가져 오지 말고 한번에 해당 되는 내용을 가져 오자!
+        # 혹시 영어가 될 때를 대비 해서 icontains(대소문자)
+        # 오히려 조아~
+        recipes = Recipe.objects.filter(*[Q(ingredients__icontains=ingredient) |
+                                          Q(name__icontains=ingredient) for ingredient in ingredients])
 
-        serializer = SearchSerializer(filter_recipes, many=True)
+        serializer = SearchSerializer(recipes, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
