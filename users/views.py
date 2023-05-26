@@ -1,6 +1,5 @@
 import requests
 import os
-from django.conf import settings
 from django.shortcuts import redirect
 from allauth.socialaccount.models import SocialAccount
 from dj_rest_auth.registration.views import SocialLoginView
@@ -9,7 +8,7 @@ from allauth.socialaccount.providers.kakao import views as kakao_view
 from allauth.socialaccount.providers.google import views as google_view
 from allauth.socialaccount.providers.naver import views as naver_view
 from allauth.socialaccount.providers.github import views as github_view
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse
 from json.decoder import JSONDecodeError
 from rest_framework import status
 from users.models import User
@@ -125,7 +124,7 @@ class KakaoLogin(SocialLoginView):
 # Google 로그인
 def google_login(request):
     scope = "https://www.googleapis.com/auth/userinfo.email"
-    client_id = getattr(settings, "SOCIAL_AUTH_GOOGLE_CLIENT_ID")
+    client_id = os.environ.get("SOCIAL_AUTH_GOOGLE_CLIENT_ID")
     return redirect(f"https://accounts.google.com/o/oauth2/v2/auth?client_id={client_id}&response_type=code&redirect_uri={GOOGLE_CALLBACK_URI}&scope={scope}")
 
 
@@ -171,8 +170,11 @@ def google_callback(request):
         # 소셜 유저가 아니거나 소셜 유저이지만 구글계정이 아닐 때 에러처리
         if social_user is None:
             return JsonResponse({'err_msg': 'email exists but not social user'}, status=status.HTTP_400_BAD_REQUEST)
+        
         if social_user.provider != 'google':
-            return JsonResponse({'err_msg': 'no matching social type'}, status=status.HTTP_400_BAD_REQUEST)
+            response = HttpResponse(status=status.HTTP_400_BAD_REQUEST)
+            response['Location'] = "http://127.0.0.1:5500/index.html"
+            return response
 
         # 기존에 Google로 가입된 유저 => 로그인 & 해당 유저의 jwt 발급
         data = {'access_token': access_token, 'code': code}
@@ -199,7 +201,9 @@ def google_callback(request):
         accept_status = accept.status_code
 
         if accept_status != 200:
-            return JsonResponse({'err_msg': 'failed to signup'}, status=accept_status)
+            response = HttpResponse(status=status.HTTP_400_BAD_REQUEST)
+            response['Location'] = "http://127.0.0.1:5500/index.html"
+            return response
 
       # JWT 토큰 발급
         jwt_token = generate_jwt_token(user)
@@ -368,13 +372,8 @@ class GithubLogin(SocialLoginView):
     callback_url = GITHUB_CALLBACK_URI
     client_class = OAuth2Client
     
-class MyPage(APIView):
+class UserDelete(APIView):
     # permission_classes = [permissions.IsAuthenticated]
-
-    def get(self, request, user_id):
-        user_profile = get_object_or_404(User, id=user_id)
-        serializer = UserProfileSerializer(user_profile)
-        return Response(serializer.data, status=status.HTTP_200_OK)
 
     def delete(self, request, user_id):
         user = get_object_or_404(User, id=user_id)
