@@ -18,7 +18,7 @@ from rest_framework.generics import get_object_or_404
 from rest_framework import permissions
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken, RefreshToken
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework_simplejwt.views import TokenObtainPairView
 from django.contrib import auth
 # from rest_framework_simplejwt.tokens import RefreshToken
 from django.http import HttpResponseRedirect
@@ -43,37 +43,20 @@ state = os.environ.get('STATE')
 #             return redirect('index.html')
 
 
-# jwt를 활용한 회원가입
-class RegisterAPIView(APIView):
+# 일반 회원가입
+class SignupView(APIView):
     def post(self, request):
-        serializer = UserSerializer(data=request.data)
+        data = request.data.copy()
+        serializer = UserSerializer(data=data)
+        print(data)
         if serializer.is_valid():
-            user = serializer.save()
-
-            token = TokenObtainPairSerializer.get_token(user)
-            refresh_token = str(token)
-            access_token = str(token.access_token)
-            res = Response(
-                {
-                    "user": serializer.data,
-                    "message": "register successs",
-                    "token": {
-                        "access": access_token,
-                        "refresh": refresh_token,
-                    },
-                },
-                status=status.HTTP_200_OK,
-            )
-
-            # jwt 토큰 => 쿠키에 저장
-            res.set_cookie("access", access_token, httponly=True)
-            res.set_cookie("refresh", refresh_token, httponly=True)
-
-            return res
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            serializer.save()
+            return Response({'message': ' 가입완료!'}, status=status.HTTP_201_CREATED)
+        else:
+            return Response({'message': f'${serializer.errors}'}, status=status.HTTP_400_BAD_REQUEST)
 
 
-class LoginView(TokenObtainPairSerializer):
+class LoginView(TokenObtainPairView):
     serializer_class = LoginSerializer
 
 
@@ -453,7 +436,7 @@ def github_callback(request):
         accept_status = accept.status_code
         if accept_status != 200:
             return JsonResponse({'err_msg': 'failed to signin'}, status=accept_status)
-         # JWT 토큰 발급
+        # JWT 토큰 발급
         jwt_token = generate_jwt_token(user)
         response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
         response.set_cookie('jwt_token', jwt_token)
@@ -470,7 +453,7 @@ def github_callback(request):
         if accept_status != 200:
             return JsonResponse({'err_msg': 'failed to signup'}, status=accept_status)
 
-         # JWT 토큰 발급
+        # JWT 토큰 발급
         jwt_token = generate_jwt_token(user)
         response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
         response.set_cookie('jwt_token', jwt_token)
@@ -485,7 +468,7 @@ class GithubLogin(SocialLoginView):
 
 class UserDelete(APIView):
 
- # permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
     def delete(self, request, user_id):
         user = get_object_or_404(User, id=user_id)

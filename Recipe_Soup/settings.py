@@ -57,7 +57,7 @@ INSTALLED_APPS = [
 ]
 
 # 웹사이트 복수 생성시 사이트 지정을 위해 필요
-SITE_ID = 2
+SITE_ID = 1
 
 AUTH_USER_MODEL = 'users.User'
 

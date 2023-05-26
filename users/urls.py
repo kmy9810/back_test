@@ -1,9 +1,11 @@
 from django.urls import path
-from users import views
+from . import views
 
 urlpatterns = [
-    path('signup/', views.RegisterAPIView.as_view()),
-    path('login/', views.LoginView),
+    # 일반 로그인
+    path('signups/', views.SignupView.as_view(), name='signup'),
+    path('logins/', views.LoginView.as_view(), name='login'),
+    # 카카오 로그인
     path('kakao/login/', views.kakao_login, name='kakao_login'),
     path('kakao/callback/', views.kakao_callback, name='kakao_callback'),
     path('kakao/login/finish/', views.KakaoLogin.as_view(),
