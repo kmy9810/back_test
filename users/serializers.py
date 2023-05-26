@@ -13,8 +13,6 @@ class LoginSerializer(TokenObtainPairSerializer):
         return token
 
 # 일반 회원가입 로그인을 위한 시리얼라이저
-
-
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User

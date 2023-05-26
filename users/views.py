@@ -12,12 +12,15 @@ from json.decoder import JSONDecodeError
 from rest_framework import status
 from users.models import User
 from rest_framework.views import APIView
-from users.serializers import UserProfileSerializer, SocialLoginSerializer
+from users.serializers import UserProfileSerializer
 from rest_framework.generics import get_object_or_404
 from rest_framework import permissions
 from rest_framework.response import Response
-from rest_framework_simplejwt.tokens import AccessToken
+from rest_framework_simplejwt.tokens import AccessToken, RefreshToken
 from django.contrib import auth
+# from rest_framework_simplejwt.tokens import RefreshToken
+from django.http import HttpResponseRedirect
+
 
 BASE_URL = 'http://127.0.0.1:8000/'
 KAKAO_CALLBACK_URI = BASE_URL + 'users/kakao/callback/'
@@ -35,13 +38,18 @@ state = os.environ.get('STATE')
 #             auth.login(request, user)
 #             return redirect('index.html')
 
+# token
+# def generate_jwt_token(user):
+#     access_token = AccessToken.for_user(user)
+#     return str(access_token)
+
+
 def generate_jwt_token(user):
-    access_token = AccessToken.for_user(user)
-    return str(access_token)
+    refresh = RefreshToken.for_user(user)
+    return {'refresh': str(refresh), 'access': str(refresh.access_token)}
+
 
 # KAKAO_REST_API_KEY json파일 형태로 보관하여 연결
-
-
 def kakao_login(request):
     rest_api_key = os.environ.get('KAKAO_REST_API_KEY')
     return redirect(
@@ -74,6 +82,7 @@ def kakao_callback(request):
     """
     Email Request
     """
+
     profile_request = requests.post(
         "https://kapi.kakao.com/v2/user/me", headers={"Authorization": f"Bearer {access_token}"})
     profile_json = profile_request.json()
@@ -83,6 +92,7 @@ def kakao_callback(request):
     if error is not None:
         raise JSONDecodeError(error)
     kakao_account = profile_json.get('kakao_account')
+
     """
     kakao_account에서 이메일 외에
     카카오톡 프로필 이미지, 배경 이미지 url 가져올 수 있음
@@ -128,10 +138,16 @@ def kakao_callback(request):
         accept_status = accept.status_code
         if accept_status != 200:
             return JsonResponse({'err_msg': 'failed to signup'}, status=accept_status)
-        # user의 pk, email, first name, last name과 Access Token, Refresh token 가져옴
-        accept_json = accept.json()
-        accept_json.pop('user', None)
-        return JsonResponse(accept_json)
+
+        # JWT 토큰 발급
+        jwt_token = generate_jwt_token(user)
+        response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
+        response.set_cookie('jwt_token', jwt_token)
+        return response
+#  # user의 pk, email, first name, last name과 Access Token, Refresh token 가져옴
+#         accept_json = accept.json()
+#         accept_json.pop('user', None)
+#         return JsonResponse(accept_json)
 
 
 class KakaoLogin(SocialLoginView):
@@ -140,11 +156,8 @@ class KakaoLogin(SocialLoginView):
     callback_url = KAKAO_CALLBACK_URI
     # callback_url = 'http://127.0.0.1:5500/index.html'
 
-# class KakaoLogout(SocialLogoutView):
-#     adapter_class = kakao_view.KakaoOAuth2Adapter
-#     client_class = OAuth2Client
-#     callback_url = ''
 
+# Google 로그인
 
 def google_login(request):
     scope = "https://www.googleapis.com/auth/userinfo.email"
@@ -166,9 +179,7 @@ def google_callback(request):
     # 1-1. json으로 변환 & 에러 부분 파싱
     token_req_json = token_req.json()
     error = token_req_json.get("error")
-    print("###################")
-    print(token_req_json)
-    print("###################")
+
     # 1-2. 에러 발생 시 종료
     if error is not None:
         raise JSONDecodeError(error)
@@ -207,6 +218,7 @@ def google_callback(request):
 
         # 기존에 Google로 가입된 유저 => 로그인 & 해당 유저의 jwt 발급
         data = {'access_token': access_token, 'code': code}
+
         print(data)
 
         accept = requests.post(
@@ -251,20 +263,21 @@ def google_callback(request):
         if accept_status != 200:
             return JsonResponse({'err_msg': 'failed to signup'}, status=accept_status)
 
-        accept_json = accept.json()
-        accept_json.pop('user', None)
-        return JsonResponse(data)
+        # JWT 토큰 발급
+        jwt_token = generate_jwt_token(user)
+        response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
+        response.set_cookie('jwt_token', jwt_token)
+        return response
 
 
 class GoogleLogin(SocialLoginView):
     adapter_class = google_view.GoogleOAuth2Adapter
     callback_url = GOOGLE_CALLBACK_URI
     client_class = OAuth2Client
-    print(adapter_class)
 
 
 class MyPage(APIView):
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request, user_id):
         user_profile = get_object_or_404(User, id=user_id)

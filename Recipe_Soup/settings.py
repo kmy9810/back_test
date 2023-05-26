@@ -151,7 +151,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 LOGIN_REDIRECT_URL = 'http://127.0.0.1:5500/index.html'
 
+
 SOCIALACCOUNT_LOGIN_ON_GET = True  # 중간에 선택하는 페이지 없이 바로 되도록
+LOGIN_REDIRECT_URL = 'http://127.0.0.1:5500/index.html'  # 로그인 후 보여질 페이지
+ACCOUNT_LOGOUT_ON_GET = True  # 로그아웃 요청 시 바로 로그아웃
+
+# ACCOUNT_USER_MODEL_USERNAME_FIELD = None  # username 필드 사용 x << 회원가입시 입력 불가하게 되어버리기 때문에 임시
+
 ACCOUNT_EMAIL_REQUIRED = True            # email 필드 사용 o
 ACCOUNT_USERNAME_REQUIRED = False        # username 필드 사용 x
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
