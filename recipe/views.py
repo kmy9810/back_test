@@ -11,12 +11,18 @@ from .serializers import RecipeSerializer, ReviewSerializer, CommentSerializer, 
 # 레시피 카테 고리별 조회 및 등록
 class RecipeView(APIView):
     # permission_classes = [permissions.IsAuthenticated]
-    def get(self, request, category_id):
+    def get(self, request, category_id, offset=0):
         # category 모델 생성! -> 확장성을 위해 빼자
         category = {1: "국&찌개", 2: "밥", 3: "반찬", 4: "후식", 5: "일품"}
-        recipe = Recipe.objects.filter(category=category[category_id])
+        limit = 8
+        recipe = Recipe.objects.filter(category=category[category_id])[offset:offset+limit]
+        total = Recipe.objects.filter(category=category[category_id]).count()
         serializer = RecipeSerializer(recipe, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        data = {
+            'data': serializer.data,
+            'total': total
+        }
+        return Response(data, status=status.HTTP_200_OK)
 
 
 # 레시피 상세 조회
