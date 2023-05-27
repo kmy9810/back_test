@@ -8,8 +8,6 @@ from allauth.socialaccount.providers.kakao import views as kakao_view
 from allauth.socialaccount.providers.google import views as google_view
 from allauth.socialaccount.providers.naver import views as naver_view
 from allauth.socialaccount.providers.github import views as github_view
-from django.http import HttpResponse, JsonResponse
-from json.decoder import JSONDecodeError
 from rest_framework import status
 from users.models import User
 from rest_framework.views import APIView
@@ -208,17 +206,11 @@ def google_callback(request):
     # 2-2. 성공 시 이메일 가져오기
     email_req_json = email_req.json()
     email = email_req_json.get('email')
-    print(email_req_json)
-    # {'issued_to': '250779783110-rje0f539a4ngd3qmi1ol8kr4r2n84gh1.apps.googleusercontent.com', 
-    #  'audience': '250779783110-rje0f539a4ngd3qmi1ol8kr4r2n84gh1.apps.googleusercontent.com', 
-    #  'user_id': '106153673973080847339', 'scope': 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email openid', 
-    #  'expires_in': 3598, 'email': 'oky07031217@gmail.com', 'verified_email': True, 'access_type': 'offline'}
-
-    # 3. 전달받은 이메일, access_token, code로 회원가입 or 로그인 진행
+  
     try:
         # 전달받은 이메일로 등록된 유저가 있는지 탐색
         user = User.objects.get(email=email)
-        social_user = SocialAccount.objects.get(user=user) # uid = 117363005248882848468
+        social_user = SocialAccount.objects.get(user=user) 
 
         # 소셜 유저가 아니거나 소셜 유저이지만 구글계정이 아닐 때 에러처리
         if social_user is None:
