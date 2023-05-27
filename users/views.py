@@ -261,6 +261,11 @@ def google_callback(request):
         jwt_token = generate_jwt_token(user)
         response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
         response.set_cookie('jwt_token', jwt_token)
+        
+        print(jwt_token)
+        print("#############")
+        accept_json = accept.json()
+        print(accept_json)
         return response
 
     except User.DoesNotExist:
@@ -426,6 +431,7 @@ def github_callback(request):
         return redirect(redirect_url_with_status)
 
     id = user_json.get("id")
+    print(user_json)
 
     try:
         social_user = SocialAccount.objects.get(uid=id)
@@ -485,8 +491,7 @@ class GithubLogin(SocialLoginView):
 
 
 class UserDelete(APIView):
-
- # permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
     def delete(self, request, user_id):
         user = get_object_or_404(User, id=user_id)

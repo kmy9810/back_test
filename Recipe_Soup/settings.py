@@ -211,6 +211,31 @@ SIMPLE_JWT = {
 
 CORS_ORIGIN_ALLOW_ALL = True  # 모든 도메인에서 요청을 허용하려면 True로 설정
 
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'offline',
+        },
+        'OAUTH_PKCE_ENABLED': True,
+    },
+    'github': {
+        'SCOPE': [
+            'user',
+            'email',
+        ],
+    },
+    'naver': {
+        'SCOPE': [
+            'email',
+            ],
+        },
+    
+}
+
 CORS_ALLOW_HEADERS = [
     'authorization-token',
     'content-type',  # 'Content-Type' 헤더 추가
