@@ -81,6 +81,8 @@ def kakao_callback(request):
     profile_request = requests.get(
         "https://kapi.kakao.com/v2/user/me", headers={"Authorization": f"Bearer {access_token}"})
     profile_json = profile_request.json()
+    kakao_account = profile_json.get('kakao_account')
+    print(kakao_account)
 
     error = profile_json.get("error")
     
@@ -90,13 +92,14 @@ def kakao_callback(request):
         redirect_url_with_status = f'{redirect_url}?err_msg={err_msg}'
         return redirect(redirect_url_with_status)
 
-    id = profile_json.get('id')
+    email = kakao_account.get('email')
+    print(email)
   
     try:
         # 기존에 가입된 유저의 Provider가 kakao가 아니면 에러 발생, 맞으면 로그인
         # 다른 SNS로 가입된 유저
-        social_user = SocialAccount.objects.get(uid=id)
-        user = social_user.user
+        user = User.objects.get(email=email)
+        social_user = SocialAccount.objects.get(user=user)
 
         # 소셜 유저가 아니거나 소셜 유저이지만 카카오 계정이 아닐 때 에러처리
         # 기존에 가입된 유저의 Provider가 kakao가 아니면 에러 발생, 맞으면 로그인
@@ -125,18 +128,13 @@ def kakao_callback(request):
             redirect_url_with_status = f'{redirect_url}?err_msg={err_msg}'
             return redirect(redirect_url_with_status)
 
-        accept_json = accept.json()
-        accept_json.pop('user', None)
-        jwt_token = generate_jwt_token(user)
-        accept_json['token'] = jwt_token
-
         # JWT 토큰 발급 후 redirect
         jwt_token = generate_jwt_token(user)
         response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
         response.set_cookie('jwt_token', jwt_token)
         return response
 
-    except SocialAccount.DoesNotExist:
+    except User.DoesNotExist:
         # 기존에 해당 닉네임으로 가입된 유저가 없으면 새로 가입 => 새로 회원가입 & 해당 유저의 jwt 발급
         data = {'access_token': access_token, 'code': code}
         accept = requests.post(
