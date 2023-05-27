@@ -14,16 +14,13 @@ def success(request):
   orderId = request.GET.get('orderId')
   amount = request.GET.get('amount')
   paymentKey = request.GET.get('paymentKey')
-  print(orderId,amount,paymentKey, "진입 체크")
-  print(access_token)
+
   url = "https://api.tosspayments.com/v1/payments/confirm"
   secret_key = os.environ.get('TOSS_SECRET_KEY')
   django_secret_key = os.environ.get('SECRET_KEY')
   try:
       token_data = jwt.decode(access_token, key=django_secret_key, algorithms=["HS256"]) #jwt 복호화 
-      print(token_data)
       user_id = token_data.get('user_id')
-      print("사용자 ID:", user_id)
       # 사용자 ID로 DB에서 user_id 가져오기 
       user = User.objects.get(id=user_id)
       user_serializer = UserSerializer(user)
