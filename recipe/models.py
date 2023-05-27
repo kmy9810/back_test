@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from users.models import User
 
 
 class Recipe(models.Model):
@@ -27,7 +28,6 @@ class Recipe(models.Model):
             return reverse('recipe_view', kwargs={'recipe_id': self.id, 'category_id': "1"})
 
 
-
 class SubRecipe(models.Model):
     recipe = models.ForeignKey('Recipe', on_delete=models.CASCADE)
     turn = models.TextField()
@@ -35,7 +35,7 @@ class SubRecipe(models.Model):
 
 
 class Review(models.Model):
-    # user pk 추가
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     recipe = models.ForeignKey('Recipe', on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     content = models.TextField()
@@ -49,7 +49,7 @@ class Review(models.Model):
 
 
 class Comment(models.Model):
-    # user pk 추가
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     review = models.ForeignKey('Review', on_delete=models.CASCADE)
     comment = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
