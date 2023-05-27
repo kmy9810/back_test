@@ -23,6 +23,9 @@ class Recipe(models.Model):
             return reverse('recipe_detail_view', kwargs={'recipe_id': self.id})
         elif category == 'review':
             return reverse('review_view', kwargs={'recipe_id': self.id})
+        elif category == 'recipe_list':
+            return reverse('recipe_view', kwargs={'recipe_id': self.id, 'category_id': "1"})
+
 
 
 class SubRecipe(models.Model):
