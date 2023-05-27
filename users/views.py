@@ -53,6 +53,7 @@ class SignupView(APIView):
             serializer.save()
             return Response({'message': ' 가입완료!'}, status=status.HTTP_201_CREATED)
         else:
+            print(serializer.errors)
             return Response({'message': f'${serializer.errors}'}, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -299,10 +300,6 @@ class GoogleLogin(SocialLoginView):
     adapter_class = google_view.GoogleOAuth2Adapter
     callback_url = GOOGLE_CALLBACK_URI
     client_class = OAuth2Client
-
-
-class MyPage(APIView):
-    pass
 
 
 # Naver 로그인
