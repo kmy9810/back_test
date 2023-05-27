@@ -10,11 +10,9 @@ from .serializers import RecipeSerializer, ReviewSerializer, CommentSerializer, 
 
 # 레시피 카테 고리별 조회 및 등록
 class RecipeView(APIView):
-    # permission_classes = [permissions.IsAuthenticated]
-
     def get(self, request, category_id, offset=0):
         # category 모델 생성! -> 확장성을 위해 빼자
-        # print(request.headers)
+        CheckUserView.as_view()
         category = {1: "국&찌개", 2: "밥", 3: "반찬", 4: "후식", 5: "일품"}
         limit = 8
         recipe = Recipe.objects.filter(category=category[category_id])[offset:offset+limit]
@@ -34,8 +32,8 @@ class RecipeDetailView(APIView):
         serializer = RecipeSerializer(recipe)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-
     def patch(self, request, recipe_id):
+        CheckUserView.as_view()
         recipe = get_object_or_404(Recipe, id=recipe_id)
         serializer = RecipeSerializer(recipe, data=request.data, partial=True)
         if serializer.is_valid(raise_exception=True):
@@ -45,6 +43,7 @@ class RecipeDetailView(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, recipe_id):
+        CheckUserView.as_view()
         recipe = get_object_or_404(Recipe, id=recipe_id)
         recipe.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
@@ -57,22 +56,19 @@ class ReviewView(APIView):
         serializer = ReviewSerializer(review, many=True)
         return Response(serializer.data[::-1], status=status.HTTP_200_OK)
 
-
     def post(self, request, recipe_id):
         # 이미지가 빈값으로 올 땐 copy를 사용해서 변경!
         # deepcopy -> copy모듈 임포트? -> 완전 복사!(안전)
         # try, except 사용 고려 -> 추가 예외 처리!
-        print(request.data)
+        CheckUserView.as_view()
         if request.data['image'] == 'undefined':
             data = request.data.copy()
             data['image'] = ''
             serializer = ReviewSerializer(data=data)
         else:
             serializer = ReviewSerializer(data=request.data)
-
-
         if serializer.is_valid():
-            serializer.save(recipe_id=recipe_id)
+            serializer.save(recipe_id=recipe_id, user_id=request.user.id)
             slack_message = f"[새로운 후기 알람] \n" \
                             f"레시피 : {serializer.data['recipe']} \n" \
                             f"후기 제목 : {serializer.data['title']} \n" \
@@ -91,6 +87,7 @@ class ReviewDetailView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def patch(self, request, review_id):
+        CheckUserView.as_view()
         review = get_object_or_404(Review, id=review_id)
         serializer = ReviewSerializer(review, data=request.data, partial=True)
         if serializer.is_valid(raise_exception=True):
@@ -100,6 +97,7 @@ class ReviewDetailView(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, review_id):
+        CheckUserView.as_view()
         review = get_object_or_404(Review, id=review_id)
         review.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
@@ -114,10 +112,11 @@ class CommentView(APIView):
 
     # pk = review_id
     def post(self, request, pk):
+        CheckUserView.as_view()
         serializer = CommentSerializer(data=request.data)
         if serializer.is_valid():
             # 유저도 같이 저장 추가 예정
-            serializer.save(review_id=pk)
+            serializer.save(review_id=pk, user_id=request.user.id)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -125,6 +124,7 @@ class CommentView(APIView):
     # pk = comment_id
     # patch, put 차이 찾아 보자
     def patch(self, request, pk):
+        CheckUserView.as_view()
         comment = get_object_or_404(Comment, id=pk)
         serializer = CommentSerializer(comment, data=request.data, partial=True)
         if serializer.is_valid(raise_exception=True):
@@ -135,12 +135,14 @@ class CommentView(APIView):
 
     # pk = comment_id
     def delete(self, request, pk):
+        CheckUserView.as_view()
         comment = get_object_or_404(Comment, id=pk)
         comment.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class SearchView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
     def post(self, request):
         search_word = request.data['search']
         ingredients = search_word.split(',')[:3]  # 최대 3개의 재료 추출
@@ -152,3 +154,7 @@ class SearchView(APIView):
 
         serializer = SearchSerializer(recipes, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class CheckUserView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
