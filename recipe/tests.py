@@ -22,7 +22,7 @@ class RecipeTest(APITestCase):
 
     def test_get_recipe_list(self):
         response = self.client.get(
-            path=reverse('recipe_view'),
+            path=f'http://127.0.0.1:8000/recipe-list/{1}/{1}/',
         )
         self.assertEquals(response.status_code, 200)
 
@@ -63,5 +63,7 @@ class ReviewTest(APITestCase):
         for recipe in self.recipes:
             url = recipe.get_absolute_url(category='review')
             response = self.client.post(path=url,
-                                        data={'title': self.faker.sentence(), 'content': self.faker.sentence()})
+                                        data={'title': self.faker.sentence(),
+                                              'content': self.faker.sentence(), 'star': "1",
+                                              'image': 'undefined'})
             self.assertEquals(response.status_code, 201)

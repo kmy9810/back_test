@@ -194,7 +194,8 @@ def google_callback(request):
 
     # 1. 받은 code로 구글에 access token 요청
     token_req = requests.post(
-        f"https://oauth2.googleapis.com/token?client_id={client_id}&client_secret={client_secret}&code={code}&grant_type=authorization_code&redirect_uri={GOOGLE_CALLBACK_URI}&state={state}")
+        f"https://oauth2.googleapis.com/token?client_id={client_id}&client_secret={client_secret}&code={code}"
+        f"&grant_type=authorization_code&redirect_uri={GOOGLE_CALLBACK_URI}&state={state}")
 
     # 1-1. json으로 변환 & 에러 부분 파싱
     token_req_json = token_req.json()
@@ -220,14 +221,15 @@ def google_callback(request):
 
     # 2-2. 성공 시 이메일 가져오기
     email_req_json = email_req.json()
-    id = email_req_json.get('user_id')
+    email = email_req_json.get('email')
     print(email_req_json)
 
     # 3. 전달받은 이메일, access_token, code로 회원가입 or 로그인 진행
     try:
         # 전달받은 이메일로 등록된 유저가 있는지 탐색
-        social_user = SocialAccount.objects.get(uid=id)
-        user = social_user.user
+        user = User.objects.get(email=email)
+        social_user = SocialAccount.objects.get(user=user)
+
 
         # 소셜 유저가 아니거나 소셜 유저이지만 구글계정이 아닐 때 에러처리
         if social_user is None:
@@ -291,12 +293,6 @@ def google_callback(request):
         response = HttpResponse(status=status.HTTP_400_BAD_REQUEST)
         response['Location'] = "http://127.0.0.1:5500/index.html"
         return response
-
-    # JWT 토큰 발급
-    jwt_token = generate_jwt_token(user)
-    response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
-    response.set_cookie('jwt_token', jwt_token)
-    return response
 
 
 class GoogleLogin(SocialLoginView):
