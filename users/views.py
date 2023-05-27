@@ -30,17 +30,6 @@ GITHUB_CALLBACK_URI = BASE_URL + 'users/github/callback/'
 
 state = os.environ.get('STATE')
 
-
-# def login(request):
-#     if request.method == "POST":
-#         username = request.POST['username']
-#         password = request.POST['password']
-#         user = auth.authenticate(request, username=username, password=password)
-#         if user is not None:
-#             auth.login(request, user)
-#             return redirect('index.html')
-
-
 # 일반 회원가입
 class SignupView(APIView):
     def post(self, request):
