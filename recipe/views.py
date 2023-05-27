@@ -11,8 +11,10 @@ from .serializers import RecipeSerializer, ReviewSerializer, CommentSerializer, 
 # 레시피 카테 고리별 조회 및 등록
 class RecipeView(APIView):
     # permission_classes = [permissions.IsAuthenticated]
+
     def get(self, request, category_id, offset=0):
         # category 모델 생성! -> 확장성을 위해 빼자
+        # print(request.headers)
         category = {1: "국&찌개", 2: "밥", 3: "반찬", 4: "후식", 5: "일품"}
         limit = 8
         recipe = Recipe.objects.filter(category=category[category_id])[offset:offset+limit]
@@ -31,6 +33,7 @@ class RecipeDetailView(APIView):
         recipe = get_object_or_404(Recipe, id=recipe_id)
         serializer = RecipeSerializer(recipe)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
 
     def patch(self, request, recipe_id):
         recipe = get_object_or_404(Recipe, id=recipe_id)
@@ -54,20 +57,19 @@ class ReviewView(APIView):
         serializer = ReviewSerializer(review, many=True)
         return Response(serializer.data[::-1], status=status.HTTP_200_OK)
 
+
     def post(self, request, recipe_id):
         # 이미지가 빈값으로 올 땐 copy를 사용해서 변경!
         # deepcopy -> copy모듈 임포트? -> 완전 복사!(안전)
-        # test = request.data
-        # print(id(test))
-        # print(id(request.data))
-        # print(id(data))
         # try, except 사용 고려 -> 추가 예외 처리!
+        print(request.data)
         if request.data['image'] == 'undefined':
             data = request.data.copy()
             data['image'] = ''
             serializer = ReviewSerializer(data=data)
         else:
             serializer = ReviewSerializer(data=request.data)
+
 
         if serializer.is_valid():
             serializer.save(recipe_id=recipe_id)
@@ -145,7 +147,6 @@ class SearchView(APIView):
         # 재료를 모두 포함 하는 레시피 필터링
         # Recipe.objects.all() -> 다 가져 오지 말고 한번에 해당 되는 내용을 가져 오자!
         # 혹시 영어가 될 때를 대비 해서 icontains(대소문자)
-        # 오히려 조아~
         recipes = Recipe.objects.filter(*[Q(ingredients__icontains=ingredient) |
                                           Q(name__icontains=ingredient) for ingredient in ingredients])
 
