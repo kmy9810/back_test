@@ -481,8 +481,7 @@ class GithubLogin(SocialLoginView):
 
 
 class UserDelete(APIView):
-    # permission_classes = [permissions.IsAuthenticated]
-
+    permission_classes = [permissions.IsAuthenticated]
     def delete(self, request, user_id):
         user = get_object_or_404(User, id=user_id)
         if request.user == user:
