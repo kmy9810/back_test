@@ -10,7 +10,6 @@ urlpatterns = [
     path('kakao/callback/', views.kakao_callback, name='kakao_callback'),
     path('kakao/login/finish/', views.KakaoLogin.as_view(),
          name='kakao_login_todjango'),
-    # path('kakao/logout/', views.KakaoLogout.as_view(), name='kakao_logout'),
     # 구글 로그인
     path('google/login/', views.google_login, name='google_login'),
     path('google/callback/', views.google_callback, name='google_callback'),
