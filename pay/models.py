@@ -1,9 +1,9 @@
 from django.db import models
 from django.utils import timezone
-# from users.models import User
+from users.models import User
 
 class Payment(models.Model):
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     supplied_amount = models.DecimalField(max_digits=10, decimal_places=2)
     # 다른 필드들을 필요에 따라 추가할 수 있습니다.
@@ -15,12 +15,12 @@ class Payment(models.Model):
 
 
 class Subscribe(models.Model):
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     price = models.PositiveIntegerField(default=0)
     type = models.CharField(max_length=50)
     is_subscribe = models.BooleanField(default=False)
     start_subscribe_at = models.DateTimeField(auto_now_add=True)
-    restart_subscribe_at = models.DateTimeField(null=True, default=None, blank=True)
+    end_date = models.DateTimeField(null=True, default=None, blank=True)
     duration = models.IntegerField(default=0)  # 구독 기간 (일 수)
 
     def calculate_end_date(self):
@@ -32,9 +32,9 @@ class Subscribe(models.Model):
             duration = 0  # 이외의 경우 기간을 0으로 설정하거나 에러 처리
 
         end_date = self.start_subscribe_at + timezone.timedelta(days=duration)
-        # formatted_date = end_date.strftime("%Y년 %m월 %d일")
-        # return formatted_date
-        return end_date
+        self.end_date = end_date  # end_date 필드 업데이트
+        self.duration = duration
+        self.save()  # 변경사항 저장
       
     def check_subscription_status(self):
         end_date = self.calculate_end_date()
