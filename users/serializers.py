@@ -9,7 +9,8 @@ class LoginSerializer(TokenObtainPairSerializer):
     def get_token(cls, user):
         token = super().get_token(user)
         token['email'] = user.email
-        # token['is_admin'] = user.is_admin
+        token['is_subscribe'] = user.is_subscribe
+        
         return token
 
 # 일반 회원가입 로그인을 위한 시리얼라이저

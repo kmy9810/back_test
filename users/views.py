@@ -91,16 +91,21 @@ def kakao_callback(request):
     if error is not None:
         raise JSONDecodeError(error)
     # kakao_account = profile_json.get('kakao_account')
-
-    id = profile_json.get('id')
+    
+    
+    kakao_account = profile_json.get('kakao_account')
+    email = kakao_account.get('email')
+    print(profile_json)
     """
     Signup or Signin Request
     """
     try:
         # 기존에 가입된 유저의 Provider가 kakao가 아니면 에러 발생, 맞으면 로그인
         # 다른 SNS로 가입된 유저
-        social_user = SocialAccount.objects.get(uid=id)
-        user = social_user.user
+        user = User.objects.get(email=email)
+        social_user = SocialAccount.objects.get(user=user)
+
+
 
         # 소셜 유저가 아니거나 소셜 유저이지만 카카오 계정이 아닐 때 에러처리
         # 기존에 가입된 유저의 Provider가 kakao가 아니면 에러 발생, 맞으면 로그인
@@ -132,12 +137,14 @@ def kakao_callback(request):
         return response
         # return JsonResponse(accept_json)
 
-    except User.DoesNotExist:
-        # 기존에 해당 닉네임으로 가입된 유저가 없으면 새로 가입 => 새로 회원가입 & 해당 유저의 jwt 발급
+    except User.DoesNotExist:        
+        
+        # 새로 회원가입 & 해당 유저의 jwt 발급
         data = {'access_token': access_token, 'code': code}
         accept = requests.post(
             f"{BASE_URL}/users/kakao/login/finish/", data=data)
         accept_status = accept.status_code
+        
 
         if accept_status != 200:
             response = HttpResponse(status=status.HTTP_400_BAD_REQUEST)
