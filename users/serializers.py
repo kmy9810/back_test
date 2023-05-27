@@ -43,3 +43,5 @@ class SocialLoginSerializer(TokenObtainPairSerializer):
         token['email'] = user.email
         token['is_subscribe'] = user.is_subscribe
         return token
+    
+    #new
