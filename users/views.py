@@ -156,16 +156,16 @@ def kakao_callback(request):
             f"{BASE_URL}/users/kakao/login/finish/", data=data)
         accept_status = accept.status_code
 
-    if accept_status != 200:
-        response = HttpResponse(status=status.HTTP_400_BAD_REQUEST)
-        response['Location'] = "http://127.0.0.1:5500/index.html"
-        return response
+        if accept_status != 200:
+            response = HttpResponse(status=status.HTTP_400_BAD_REQUEST)
+            response['Location'] = "http://127.0.0.1:5500/index.html"
+            return response
 
-    # JWT 토큰 발급
-    jwt_token = generate_jwt_token(user)
-    response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
-    response.set_cookie('jwt_token', jwt_token)
-    return response
+        # JWT 토큰 발급
+        jwt_token = generate_jwt_token(user)
+        response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
+        response.set_cookie('jwt_token', jwt_token)
+        return response
 
 
 class KakaoLogin(SocialLoginView):
