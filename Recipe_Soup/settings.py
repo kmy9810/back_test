@@ -57,7 +57,7 @@ INSTALLED_APPS = [
 ]
 
 # 웹사이트 복수 생성시 사이트 지정을 위해 필요
-SITE_ID = 2
+SITE_ID = 1
 
 AUTH_USER_MODEL = 'users.User'
 
@@ -209,6 +209,8 @@ SIMPLE_JWT = {
 
 }
 
+CORS_ORIGIN_ALLOW_ALL = True  # 모든 도메인에서 요청을 허용하려면 True로 설정
+
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': [
@@ -219,11 +221,20 @@ SOCIALACCOUNT_PROVIDERS = {
             'access_type': 'offline',
         },
         'OAUTH_PKCE_ENABLED': True,
-    }
+    },
+    'github': {
+        'SCOPE': [
+            'user',
+            'email',
+        ],
+    },
+    'naver': {
+        'SCOPE': [
+            'email',
+            ],
+        },
+    
 }
-
-
-CORS_ORIGIN_ALLOW_ALL = True  # 모든 도메인에서 요청을 허용하려면 True로 설정
 
 CORS_ALLOW_HEADERS = [
     'authorization-token',
