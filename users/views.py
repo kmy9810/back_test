@@ -45,9 +45,18 @@ class SignupView(APIView):
 class LoginView(TokenObtainPairView):
     serializer_class = LoginSerializer
 
+class CustomRefreshToken(RefreshToken):
+    @classmethod
+    def for_user(cls, user):
+        token = super().for_user(user)
+        token["user_id"] = user.id
+        token['email'] = user.email
+        token['is_subscribe'] = user.is_subscribe
+        return token
+        
 
 def generate_jwt_token(user):
-    refresh = RefreshToken.for_user(user)
+    refresh = CustomRefreshToken.for_user(user)
     return {'refresh': str(refresh), 'access': str(refresh.access_token)}
 
 
