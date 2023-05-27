@@ -63,7 +63,6 @@ def kakao_callback(request):
     rest_api_key = os.environ.get('KAKAO_REST_API_KEY')
     code = request.GET.get("code")
     redirect_uri = KAKAO_CALLBACK_URI
-   
     token_req = requests.get(
         f"https://kauth.kakao.com/oauth/token?grant_type=authorization_code&client_id={rest_api_key}&redirect_uri={redirect_uri}&code={code}")
 

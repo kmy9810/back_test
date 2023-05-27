@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from users.models import User
+# from django.core.exceptions import ValidationError
 
 class Payment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -15,7 +16,7 @@ class Payment(models.Model):
 
 
 class Subscribe(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     price = models.PositiveIntegerField(default=0)
     type = models.CharField(max_length=50)
     is_subscribe = models.BooleanField(default=False)
