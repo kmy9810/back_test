@@ -169,7 +169,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_USE_JWT = True
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=1),  # 배포 때는 바꾸기
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=72),  # 배포 때는 바꾸기
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     "ROTATE_REFRESH_TOKENS": False,
     'BLACKLIST_AFTER_ROTATION': False,
@@ -209,6 +209,8 @@ SIMPLE_JWT = {
 
 }
 
+CORS_ORIGIN_ALLOW_ALL = True  # 모든 도메인에서 요청을 허용하려면 True로 설정
+
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': [
@@ -219,11 +221,20 @@ SOCIALACCOUNT_PROVIDERS = {
             'access_type': 'offline',
         },
         'OAUTH_PKCE_ENABLED': True,
-    }
+    },
+    'github': {
+        'SCOPE': [
+            'user',
+            'email',
+        ],
+    },
+    'naver': {
+        'SCOPE': [
+            'email',
+            ],
+        },
+    
 }
-
-
-CORS_ORIGIN_ALLOW_ALL = True  # 모든 도메인에서 요청을 허용하려면 True로 설정
 
 CORS_ALLOW_HEADERS = [
     'authorization-token',
@@ -234,3 +245,5 @@ CORS_ALLOW_HEADERS = [
 # 이미지 삽입
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+SOCIALACCOUNT_QUERY_EMAIL = True
