@@ -27,8 +27,6 @@ class UserCreationForm(forms.ModelForm):
         if commit:
             user.save()
         return user
-
-
 admin.site.register(User)
 
 # from rest_framework_simplejwt.token_blacklist.admin import OutstandingTokenAdmin
