@@ -36,7 +36,7 @@ class UserSerializer(serializers.ModelSerializer):
         return user
 
 
-class LoginSerializer(TokenObtainPairSerializer):
+class SocialLoginSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
         token = super().get_token(user)
