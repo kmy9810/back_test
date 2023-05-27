@@ -54,7 +54,6 @@ def generate_jwt_token(user):
 
 # KAKAO_REST_API_KEY json파일 형태로 보관하여 연결
 def kakao_login(request):
-    scope = "https://www.googleapis.com/auth/userinfo.email"
     rest_api_key = os.environ.get('KAKAO_REST_API_KEY')
     return redirect(
         f"https://kauth.kakao.com/oauth/authorize?client_id={rest_api_key}&redirect_uri={KAKAO_CALLBACK_URI}&response_type=code"
@@ -65,9 +64,7 @@ def kakao_callback(request):
     rest_api_key = os.environ.get('KAKAO_REST_API_KEY')
     code = request.GET.get("code")
     redirect_uri = KAKAO_CALLBACK_URI
-    """
-    Access Token Request
-    """
+   
     token_req = requests.get(
         f"https://kauth.kakao.com/oauth/token?grant_type=authorization_code&client_id={rest_api_key}&redirect_uri={redirect_uri}&code={code}")
 
@@ -75,27 +72,27 @@ def kakao_callback(request):
     error = token_req_json.get("error", None)
 
     if error is not None:
-        raise JSONDecodeError(error)
+        redirect_url = 'http://127.0.0.1:5500/index.html'
+        err_msg = "error"
+        redirect_url_with_status = f'{redirect_url}?err_msg={err_msg}'
+        return redirect(redirect_url_with_status)
 
     access_token = token_req_json.get("access_token")
-
-    """
-    u_id Request
-    """
 
     profile_request = requests.get(
         "https://kapi.kakao.com/v2/user/me", headers={"Authorization": f"Bearer {access_token}"})
     profile_json = profile_request.json()
 
     error = profile_json.get("error")
+    
     if error is not None:
-        raise JSONDecodeError(error)
-    # kakao_account = profile_json.get('kakao_account')
+        redirect_url = 'http://127.0.0.1:5500/index.html'
+        err_msg = "failed_to_get"
+        redirect_url_with_status = f'{redirect_url}?err_msg={err_msg}'
+        return redirect(redirect_url_with_status)
 
     id = profile_json.get('id')
-    """
-    Signup or Signin Request
-    """
+  
     try:
         # 기존에 가입된 유저의 Provider가 kakao가 아니면 에러 발생, 맞으면 로그인
         # 다른 SNS로 가입된 유저
@@ -106,19 +103,28 @@ def kakao_callback(request):
         # 기존에 가입된 유저의 Provider가 kakao가 아니면 에러 발생, 맞으면 로그인
         # # 다른 SNS로 가입된 유저
         if social_user is None:
-            return JsonResponse({'err_msg': 'email exists but not social user'}, status=status.HTTP_400_BAD_REQUEST)
+            redirect_url = 'http://127.0.0.1:5500/index.html'
+            status_code = 204
+            redirect_url_with_status = f'{redirect_url}?status_code={status_code}'
+            return redirect(redirect_url_with_status)
+        
         if social_user.provider != 'kakao':
-            return JsonResponse({'err_msg': 'no matching social type'}, status=status.HTTP_400_BAD_REQUEST)
+            redirect_url = 'http://127.0.0.1:5500/index.html'
+            status_code = 400
+            redirect_url_with_status = f'{redirect_url}?status_code={status_code}'
+            return redirect(redirect_url_with_status)
 
         # 기존에 kakao로 가입된 유저
         data = {'access_token': access_token, 'code': code}
-
         accept = requests.post(
             f"{BASE_URL}users/kakao/login/finish/", data=data)
         accept_status = accept.status_code
 
         if accept_status != 200:
-            return JsonResponse({'err_msg': 'failed to signin'}, status=accept_status)
+            redirect_url = 'http://127.0.0.1:5500/index.html'
+            err_msg = "failed_to_signin"
+            redirect_url_with_status = f'{redirect_url}?err_msg={err_msg}'
+            return redirect(redirect_url_with_status)
 
         accept_json = accept.json()
         accept_json.pop('user', None)
@@ -130,9 +136,8 @@ def kakao_callback(request):
         response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
         response.set_cookie('jwt_token', jwt_token)
         return response
-        # return JsonResponse(accept_json)
 
-    except User.DoesNotExist:
+    except SocialAccount.DoesNotExist:
         # 기존에 해당 닉네임으로 가입된 유저가 없으면 새로 가입 => 새로 회원가입 & 해당 유저의 jwt 발급
         data = {'access_token': access_token, 'code': code}
         accept = requests.post(
@@ -140,15 +145,15 @@ def kakao_callback(request):
         accept_status = accept.status_code
 
         if accept_status != 200:
-            response = HttpResponse(status=status.HTTP_400_BAD_REQUEST)
-            response['Location'] = "http://127.0.0.1:5500/index.html"
-            return response
+            redirect_url = 'http://127.0.0.1:5500/index.html'
+            err_msg = "kakao_signup"
+            redirect_url_with_status = f'{redirect_url}?err_msg={err_msg}'
+            return redirect(redirect_url_with_status)
 
-        # JWT 토큰 발급
-        jwt_token = generate_jwt_token(user)
-        response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
-        response.set_cookie('jwt_token', jwt_token)
-        return response
+        redirect_url = 'http://127.0.0.1:5500/index.html'
+        status_code = 201
+        redirect_url_with_status = f'{redirect_url}?status_code={status_code}'
+        return redirect(redirect_url_with_status)
 
 
 class KakaoLogin(SocialLoginView):
@@ -244,11 +249,6 @@ def google_callback(request):
         jwt_token = generate_jwt_token(user)
         response = HttpResponseRedirect("http://127.0.0.1:5500/index.html")
         response.set_cookie('jwt_token', jwt_token)
-        
-        print(jwt_token)
-        print("#############")
-        accept_json = accept.json()
-        print(accept_json)
         return response
 
     except User.DoesNotExist:
@@ -270,7 +270,6 @@ def google_callback(request):
         status_code = 201
         redirect_url_with_status = f'{redirect_url}?status_code={status_code}'
         return redirect(redirect_url_with_status)
-
 
 
 class GoogleLogin(SocialLoginView):
@@ -449,13 +448,13 @@ def github_callback(request):
         response.set_cookie('jwt_token', jwt_token)
         return response
 
-    except User.DoesNotExist:
+    except SocialAccount.DoesNotExist:
         data = {'access_token': access_token, 'code': code}
         accept = requests.post(
             f"{BASE_URL}users/github/login/finish/", data=data)
         accept_status = accept.status_code
 
-        if accept_status != 200:
+        if accept_status == 400:
             redirect_url = 'http://127.0.0.1:5500/index.html'
             err_msg = "github_signup"
             redirect_url_with_status = f'{redirect_url}?err_msg={err_msg}'
@@ -474,8 +473,7 @@ class GithubLogin(SocialLoginView):
 
 
 class UserDelete(APIView):
-    # permission_classes = [permissions.IsAuthenticated]
-
+    permission_classes = [permissions.IsAuthenticated]
     def delete(self, request, user_id):
         user = get_object_or_404(User, id=user_id)
         if request.user == user:
