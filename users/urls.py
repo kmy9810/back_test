@@ -3,8 +3,8 @@ from . import views
 
 urlpatterns = [
     # 일반 로그인
-    path('signups/', views.SignupView.as_view(), name='signup'),
-    path('logins/', views.LoginView.as_view(), name='login'),
+    path('signups/', views.SignupView.as_view(), name='signups'),
+    path('logins/', views.LoginView.as_view(), name='logins'),
     # 카카오 로그인
     path('kakao/login/', views.kakao_login, name='kakao_login'),
     path('kakao/callback/', views.kakao_callback, name='kakao_callback'),
