@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
+from .validators import check_password
 
 
 class UserManager(BaseUserManager):
@@ -25,13 +26,13 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser):
-    username = models.CharField(max_length=40)
+    username = models.CharField(max_length=40, null=True, blank=True)
     email = models.EmailField(
         verbose_name="email address",
         max_length=255,
         unique=True,
     )
-    # nickname = models.CharField(max_length=40)
+    password = models.CharField(max_length=100, validators=[check_password])
     is_subscribe = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)

@@ -18,7 +18,7 @@ from rest_framework.generics import get_object_or_404
 from rest_framework import permissions
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework_simplejwt.views import TokenObtainPairView
 from django.http import HttpResponseRedirect
 
 
@@ -30,37 +30,31 @@ GITHUB_CALLBACK_URI = BASE_URL + 'users/github/callback/'
 
 state = os.environ.get('STATE')
 
-# jwt를 활용한 회원가입
-class RegisterAPIView(APIView):
+
+# def login(request):
+#     if request.method == "POST":
+#         username = request.POST['username']
+#         password = request.POST['password']
+#         user = auth.authenticate(request, username=username, password=password)
+#         if user is not None:
+#             auth.login(request, user)
+#             return redirect('index.html')
+
+
+# 일반 회원가입
+class SignupView(APIView):
     def post(self, request):
-        serializer = UserSerializer(data=request.data)
+        data = request.data.copy()
+        serializer = UserSerializer(data=data)
+        print(data)
         if serializer.is_valid():
-            user = serializer.save()
-
-            token = TokenObtainPairSerializer.get_token(user)
-            refresh_token = str(token)
-            access_token = str(token.access_token)
-            res = Response(
-                {
-                    "user": serializer.data,
-                    "message": "register successs",
-                    "token": {
-                        "access": access_token,
-                        "refresh": refresh_token,
-                    },
-                },
-                status=status.HTTP_200_OK,
-            )
-
-            # jwt 토큰 => 쿠키에 저장
-            res.set_cookie("access", access_token, httponly=True)
-            res.set_cookie("refresh", refresh_token, httponly=True)
-
-            return res
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            serializer.save()
+            return Response({'message': ' 가입완료!'}, status=status.HTTP_201_CREATED)
+        else:
+            return Response({'message': f'${serializer.errors}'}, status=status.HTTP_400_BAD_REQUEST)
 
 
-class LoginView(TokenObtainPairSerializer):
+class LoginView(TokenObtainPairView):
     serializer_class = LoginSerializer
 
 
