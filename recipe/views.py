@@ -14,7 +14,7 @@ class RecipeView(APIView):
 
     def get(self, request, category_id, offset=0):
         # category 모델 생성! -> 확장성을 위해 빼자
-        print(request.headers)
+        # print(request.headers)
         category = {1: "국&찌개", 2: "밥", 3: "반찬", 4: "후식", 5: "일품"}
         limit = 8
         recipe = Recipe.objects.filter(category=category[category_id])[offset:offset+limit]
@@ -62,6 +62,7 @@ class ReviewView(APIView):
         # 이미지가 빈값으로 올 땐 copy를 사용해서 변경!
         # deepcopy -> copy모듈 임포트? -> 완전 복사!(안전)
         # try, except 사용 고려 -> 추가 예외 처리!
+        print(request.data)
         if request.data['image'] == 'undefined':
             data = request.data.copy()
             data['image'] = ''
