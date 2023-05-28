@@ -38,8 +38,9 @@ https://ovenapp.io/view/HPM0LYdqgz03Bru7Zal5xGz9GN8us7QH/DtjJh
 
 # 5. ERD
 
-https://github.com/Msgun7/recipe_soup/assets/107108586/c4eb0745-63ea-497d-97f7-0a777e1f29b8
-
+<p align="center">
+  <img src="https://github.com/Msgun7/recipe_soup/assets/107108586/c4eb0745-63ea-497d-97f7-0a777e1f29b8">
+</p>
 
 # 6. 버전
 파이썬 Python 3.10.6
