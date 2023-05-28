@@ -7,7 +7,22 @@ import os
 from users.models import User
 from users.serializers import UserSerializer
 from .serializers import SubscribeSerializer
-from rest_framework.response import Response
+from rest_framework.views import APIView
+
+class check_subscription(APIView):
+    def get(self, request):
+        access_token = request.META.get('HTTP_AUTHORIZATION_TOKEN')
+        django_secret_key = os.environ.get('SECRET_KEY')
+        decodedToken = jwt.decode(access_token, key=django_secret_key, algorithms=["HS256"]) #jwt 복호화 
+        print(decodedToken)
+        user_id = decodedToken.get('user_id')
+        user = User.objects.get(id=user_id)
+        subscribe = Subscribe.objects.get(user=user)
+        print(user.is_subscribe)
+        user.user_set.check_subscription_status()
+        print(user.user_set.check_subscription_status())
+
+        return HttpResponse(status=200)
 
 def success(request):
     access_token = request.META.get('HTTP_AUTHORIZATION_TOKEN')
@@ -20,10 +35,14 @@ def success(request):
     django_secret_key = os.environ.get('SECRET_KEY')
     try:
         token_data = jwt.decode(access_token, key=django_secret_key, algorithms=["HS256"]) #jwt 복호화 
+        print(token_data)
         user_id = token_data.get('user_id')
         # 사용자 ID로 DB에서 user_id 가져오기 
         user = User.objects.get(id=user_id)
         user_serializer = UserSerializer(user)
+        user.is_subscribe = True
+        user.save()
+        
         userpass = secret_key + ':'
         encoded_u = base64.b64encode(userpass.encode()).decode()
 
