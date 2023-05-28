@@ -20,7 +20,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    
+
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
@@ -41,13 +41,15 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'dj_rest_auth',
     'dj_rest_auth.registration',
-    
+
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.kakao',
     'allauth.socialaccount.providers.google',
-    
+    'allauth.socialaccount.providers.naver',
+    'allauth.socialaccount.providers.github',
+
     'users',
     'pay',
     'recipe',
@@ -77,9 +79,14 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    'rest_framework.authentication.SessionAuthentication',
+    'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ),
 }
+
+REST_USE_JWT = True
+JWT_AUTH_COOKIE = 'jwt_token'
+JTW_AUTH_REFRESH_COOKIE = 'jwt_refresh_token'
 
 TEMPLATES = [
     {
@@ -145,9 +152,15 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+LOGIN_REDIRECT_URL = 'http://127.0.0.1:5500/index.html'
 
-SOCIALACCOUNT_LOGIN_ON_GET = True # 중간에 선택하는 페이지 없이 바로 되도록
-ACCOUNT_USER_MODEL_USERNAME_FIELD = None  # username 필드 사용 x
+
+SOCIALACCOUNT_LOGIN_ON_GET = True  # 중간에 선택하는 페이지 없이 바로 되도록
+LOGIN_REDIRECT_URL = 'http://127.0.0.1:5500/index.html'  # 로그인 후 보여질 페이지
+ACCOUNT_LOGOUT_ON_GET = True  # 로그아웃 요청 시 바로 로그아웃
+
+# ACCOUNT_USER_MODEL_USERNAME_FIELD = None  # username 필드 사용 x << 회원가입시 입력 불가하게 되어버리기 때문에 임시
+
 ACCOUNT_EMAIL_REQUIRED = True            # email 필드 사용 o
 ACCOUNT_USERNAME_REQUIRED = False        # username 필드 사용 x
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
@@ -157,7 +170,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_USE_JWT = True
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=720),  # 배포 때는 바꾸기
+    "ACCESS_TOKEN_LIFETIME": timedelta(hours=24),  # 배포 때는 바꾸기
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     "ROTATE_REFRESH_TOKENS": False,
     'BLACKLIST_AFTER_ROTATION': False,
@@ -197,6 +210,8 @@ SIMPLE_JWT = {
 
 }
 
+CORS_ORIGIN_ALLOW_ALL = True  # 모든 도메인에서 요청을 허용하려면 True로 설정
+
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': [
@@ -207,11 +222,20 @@ SOCIALACCOUNT_PROVIDERS = {
             'access_type': 'offline',
         },
         'OAUTH_PKCE_ENABLED': True,
-    }
+    },
+    'github': {
+        'SCOPE': [
+            'user',
+            'email',
+        ],
+    },
+    'naver': {
+        'SCOPE': [
+            'email',
+            ],
+        },
+    
 }
-
-
-CORS_ORIGIN_ALLOW_ALL = True # 모든 도메인에서 요청을 허용하려면 True로 설정
 
 CORS_ALLOW_HEADERS = [
     'authorization-token',
@@ -222,3 +246,5 @@ CORS_ALLOW_HEADERS = [
 # 이미지 삽입
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+SOCIALACCOUNT_QUERY_EMAIL = True
