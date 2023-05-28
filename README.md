@@ -13,9 +13,9 @@
 |GitHub|이름|역할|
 |------|---|---|
 |@Msgun7|연제건(팀장)|카카오 로그인|
-|@kmy9810|김미영|front, back - CRUD, Pagination, 알림, |
+|@kmy9810|김미영|front, back - CRUD, Pagination, 알림, AI|
 |@yell2023|양예린|깃허브/네이버/구글 로그인|
-|@misily|김은수|AI|
+|@misily|김은수|AI기초|
 |@Soeun-Jang|장소은|Tosspay 결제, 배포, 발표|
 
 

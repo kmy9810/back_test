@@ -39,7 +39,7 @@ class Subscribe(models.Model):
         self.save()  # 변경사항 저장
         return end_date
 
-    # 로그인 시 구독 만료 체크 
+    # # 로그인 시 구독 만료 체크 
     def check_subscription_status(self):
         if self.end_date is None:
             self.calculate_end_date()  # end_date가 None인 경우 calculate_end_date() 호출하여 설정
@@ -47,5 +47,3 @@ class Subscribe(models.Model):
             self.user.is_subscribe = False
             self.user.save()
         return self.user.is_subscribe
-    def get_absolute_url(self):
-        return reverse('check_subscription')
