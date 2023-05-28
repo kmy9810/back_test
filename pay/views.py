@@ -8,19 +8,54 @@ from users.models import User
 from users.serializers import UserSerializer
 from .serializers import SubscribeSerializer
 from rest_framework.views import APIView
+from rest_framework_simplejwt.tokens import RefreshToken
+from django.http import HttpResponseRedirect
+from rest_framework.response import Response
 
+
+
+class CustomRefreshToken(RefreshToken):
+    @classmethod
+    def for_user(cls, user):
+        token = super().for_user(user)
+        token["user_id"] = user.id
+        token['email'] = user.email
+        token['access_token'] = str(token.access_token)
+        return token
+        
+
+
+def generate_jwt_token(user):
+    refresh = CustomRefreshToken.for_user(user)
+    return refresh["access_token"]
+  
+  
 class check_subscription(APIView):
     def get(self, request):
         access_token = request.META.get('HTTP_AUTHORIZATION_TOKEN')
         django_secret_key = os.environ.get('SECRET_KEY')
         decodedToken = jwt.decode(access_token, key=django_secret_key, algorithms=["HS256"]) #jwt 복호화 
+        print(access_token)
         print(decodedToken)
         user_id = decodedToken.get('user_id')
         user = User.objects.get(id=user_id)
-        subscribe = Subscribe.objects.get(user=user)
+        test = user.is_subscribe
         print(user.is_subscribe)
-        user.user_set.check_subscription_status()
+        flag =user.user_set.check_subscription_status()
         print(user.user_set.check_subscription_status())
+        if test != user.user_set.check_subscription_status():
+            print("ㅇㅇㅇ")
+            # JWT 토큰 발급
+            
+            print("ㅇㅇㅇㅇㅇㅇㅁㄴㅇㅁㄴㅇㅁㄴㅁㄴ")
+            del request.META['HTTP_AUTHORIZATION_TOKEN']
+            jwt_token = generate_jwt_token(user)
+            a =request.META['HTTP_AUTHORIZATION_TOKEN'] = 'Bearer ' + jwt_token
+            print(a)
+            # response.delete_cookie('jwt_token')
+            # jwt_token = generate_jwt_token(user)
+            # response.set_cookie('jwt_token', jwt_token)
+            # print(jwt_token)
 
         return HttpResponse(status=200)
 
@@ -78,9 +113,6 @@ def success(request):
         
         subscribe_serializer = SubscribeSerializer(subscribe)
         print(subscribe_serializer.data)
-        
-        
-        
         
         response_data = {
             'res': pretty,

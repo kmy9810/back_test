@@ -44,7 +44,6 @@ class Subscribe(models.Model):
         if self.end_date is None:
             self.calculate_end_date()  # end_date가 None인 경우 calculate_end_date() 호출하여 설정
         if self.end_date < timezone.now():
-            print("1")
             self.user.is_subscribe = False
             self.user.save()
         return self.user.is_subscribe
