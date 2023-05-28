@@ -142,7 +142,7 @@ class CommentView(APIView):
 
 
 class SearchView(APIView):
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
     def post(self, request):
         search_word = request.data['search']
         ingredients = search_word.split(',')[:3]  # 최대 3개의 재료 추출
@@ -153,7 +153,7 @@ class SearchView(APIView):
                                           Q(name__icontains=ingredient) for ingredient in ingredients])
 
         serializer = SearchSerializer(recipes, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.data[:10], status=status.HTTP_200_OK)
 
 
 class CheckUserView(APIView):
