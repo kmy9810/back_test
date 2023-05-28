@@ -54,6 +54,12 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 
 class CommentSerializer(serializers.ModelSerializer):
+    user_name = serializers.SerializerMethodField()
+
+    def get_user_name(self, obj):
+        user = Comment.objects.get(id=obj.id)
+        return user.user.email
+
     class Meta:
         model = Comment
         fields = '__all__'
