@@ -31,6 +31,7 @@ class SubRecipeSerializer(serializers.ModelSerializer):
 class ReviewSerializer(serializers.ModelSerializer):
     comment_set = serializers.SerializerMethodField()
     recipe_name = serializers.SerializerMethodField()
+    user_name = serializers.SerializerMethodField()
 
     def get_comment_set(self, obj):
         comment = Comment.objects.filter(review_id=obj.id)
@@ -40,6 +41,10 @@ class ReviewSerializer(serializers.ModelSerializer):
     def get_recipe_name(self, obj):
         recipes = Recipe.objects.get(id=obj.recipe_id)
         return recipes.name
+
+    def get_user_name(self, obj):
+        user = Review.objects.get(id=obj.id)
+        return user.user.email
 
     class Meta:
         model = Review
