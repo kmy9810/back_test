@@ -61,6 +61,8 @@ def success(request):
                                             point=(suppliedAmount * 0.03))
           payment.save()
 
+
+
           subscribe_serializer = SubscribeSerializer(subscribe)
           print(subscribe_serializer.data)
 
