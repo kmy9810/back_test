@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from users.models import User
+from django.urls import reverse
 
 class Payment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -15,7 +16,7 @@ class Payment(models.Model):
 
 
 class Subscribe(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user_set')
     price = models.PositiveIntegerField(default=0)
     type = models.CharField(max_length=50)
     is_subscribe = models.BooleanField(default=False)
@@ -23,6 +24,7 @@ class Subscribe(models.Model):
     end_date = models.DateTimeField(null=True, default=None, blank=True)
     duration = models.IntegerField(default=0)  # 구독 기간 (일 수)
 
+    # 구독 만료일 계산 
     def calculate_end_date(self):
         if self.type == '베이직 이용권':
             duration = 30  # 베이직 이용권 기간 (30일)
@@ -35,9 +37,15 @@ class Subscribe(models.Model):
         self.end_date = end_date  # end_date 필드 업데이트
         self.duration = duration
         self.save()  # 변경사항 저장
-      
+        return end_date
+
+    # 로그인 시 구독 만료 체크 
     def check_subscription_status(self):
-        end_date = self.calculate_end_date()
-        if end_date < timezone.now():
-            self.is_subscribe = False
-            self.save()
+        if self.end_date is None:
+            self.calculate_end_date()  # end_date가 None인 경우 calculate_end_date() 호출하여 설정
+        if self.end_date < timezone.now():
+            self.user.is_subscribe = False
+            self.user.save()
+        return self.user.is_subscribe
+    def get_absolute_url(self):
+        return reverse('check_subscription')
